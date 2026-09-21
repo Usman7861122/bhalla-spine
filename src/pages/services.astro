@@ -1,0 +1,18 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import ServicesGrid from '@components/sections/ServicesGrid.astro';
+import WhyChoose from '@components/sections/WhyChoose.astro';
+import { images } from '@data/site';
+---
+
+<PageLayout
+  title="Care services"
+  eyebrow="Services"
+  lede="Surgical and non-surgical care for the neck and back, from first consultation to full recovery."
+  image={images.spineModel}
+  imageAlt="Dr. Bhalla explaining a spine model"
+  position="70% 30%"
+>
+  <ServicesGrid />
+  <WhyChoose />
+</PageLayout>

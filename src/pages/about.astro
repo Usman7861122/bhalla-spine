@@ -1,0 +1,19 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import About from '@components/sections/About.astro';
+import Credentials from '@components/sections/Credentials.astro';
+import LegacyBand from '@components/sections/LegacyBand.astro';
+import WhyChoose from '@components/sections/WhyChoose.astro';
+import TestimonialsSection from '@components/sections/TestimonialsSection.astro';
+import CtaBand from '@components/sections/CtaBand.astro';
+import { site, images } from '@data/site';
+---
+
+<PageLayout title="About Dr. Bhalla" eyebrow="About" lede={site.description} image={images.hero} imageAlt="Dr. Amandeep Bhalla">
+  <About />
+  <LegacyBand />
+  <Credentials />
+  <WhyChoose />
+  <TestimonialsSection />
+  <CtaBand />
+</PageLayout>

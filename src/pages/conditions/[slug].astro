@@ -1,0 +1,27 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import Container from '@components/ui/Container.astro';
+import Button from '@components/ui/Button.astro';
+import Services from '@components/sections/Services.astro';
+import CtaBand from '@components/sections/CtaBand.astro';
+import { conditionGroups, images } from '@data/site';
+
+export function getStaticPaths() {
+  return conditionGroups.flatMap((g) =>
+    g.items.map((c) => ({ params: { slug: c.slug }, props: { condition: c, group: g.title } })),
+  );
+}
+
+const { condition, group } = Astro.props;
+---
+
+<PageLayout title={condition.title} eyebrow={group} image={images.handshakeScreen} imageAlt="" position="70% 30%">
+  <section class="section-y">
+    <Container class="max-w-3xl">
+      <p class="text-lg leading-relaxed">Detailed content for {condition.title} is coming soon.</p>
+      <div class="mt-10"><Button href="/contact">Book a consultation</Button></div>
+    </Container>
+  </section>
+  <Services />
+  <CtaBand />
+</PageLayout>

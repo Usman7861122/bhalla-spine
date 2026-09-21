@@ -1,0 +1,19 @@
+---
+/** The "legacy of care" pinned-photo band, preset so any page can drop it in. */
+import ParallaxBand from '@components/sections/ParallaxBand.astro';
+import { images } from '@data/site';
+---
+
+<ParallaxBand
+  src={images.consultWindow}
+  alt="Dr. Bhalla talking with a patient at the clinic in Long Beach"
+  eyebrow="A legacy of care"
+  title="Serving Long Beach, as his father did before him."
+  text="Two generations of physicians, one commitment: treat every patient the way we would want our own family treated."
+  cta={{ label: 'Book a consultation', href: '/contact' }}
+  stats={[
+    { value: '2x', label: 'LA Top Doctors, 2021 and 2022' },
+    { value: 'Harvard', label: 'Spine fellowship, MGH and Brigham' },
+    { value: 'MemorialCare', label: 'Medical Director, Spine Center' },
+  ]}
+/>
