@@ -1,0 +1,19 @@
+---
+/**
+ * Commons Clinic wordmark. Source file is the black SVG from commonsclinic.com,
+ * saved at /public/images/commons-clinic-logo.svg. `tone="light"` turns it white via CSS.
+ */
+interface Props {
+  tone?: 'dark' | 'light';
+  class?: string;
+}
+const { tone = 'dark', class: className = 'h-6 w-auto' } = Astro.props;
+---
+
+<img
+  src="/images/commons-clinic-logo.svg"
+  alt="Commons Clinic"
+  loading="lazy"
+  decoding="async"
+  class:list={[className, tone === 'light' && 'brightness-0 invert']}
+/>

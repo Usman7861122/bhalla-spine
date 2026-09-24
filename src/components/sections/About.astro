@@ -1,23 +1,28 @@
 ---
 import Reveal from '@components/react/Reveal';
 import Button from '@components/ui/Button.astro';
+import CommonsLogo from '@components/ui/CommonsLogo.astro';
 import { site, images, appointments } from '@data/site';
 ---
 
-<section id="about" class="section-y">
+<section id="about" class="section-y relative isolate overflow-hidden">
+  <!-- Faded Commons Clinic wordmark in the background -->
+  <div aria-hidden="true" class="watermark pointer-events-none absolute -right-[6%] top-1/2 -z-10 w-[70%] -translate-y-1/2 opacity-[0.045] md:w-[48%]">
+    <CommonsLogo class="h-auto w-full" />
+  </div>
   <div class="container-x grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
     <!-- Photo -->
     <Reveal client:visible className="lg:col-span-5">
       <figure class="relative">
         <div class="img-zoom aspect-[4/5] overflow-hidden rounded-sm bg-bone">
           <img
-            src={images.doctorPortrait}
-            alt={`${site.doctor} in clinic`}
+            src={images.consultWindow}
+            alt={`${site.doctor} talking with a patient`}
             loading="lazy"
             decoding="async"
             width="800"
             height="1000"
-            class="h-full w-full object-cover object-top"
+            class="h-full w-full object-cover object-[68%_center]"
           />
         </div>
         <figcaption

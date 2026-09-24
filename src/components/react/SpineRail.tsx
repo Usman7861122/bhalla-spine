@@ -12,7 +12,7 @@ interface Props {
  */
 export default function SpineRail({ sections }: Props) {
   const [active, setActive] = useState(sections[0]?.id);
-  const [onDark, setOnDark] = useState(true);
+  const [onDark, setOnDark] = useState(false);
 
   useEffect(() => {
     const els = sections.map((s) => document.getElementById(s.id)).filter(Boolean) as HTMLElement[];

@@ -217,3 +217,21 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Background wordmarks fade in as their section scrolls into view. */
+.watermark {
+  animation: watermark-in 1.6s var(--ease-out-soft) both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 60%;
+}
+@keyframes watermark-in {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(2rem);
+  }
+}
+@supports not (animation-timeline: view()) {
+  .watermark {
+    animation: none;
+  }
+}

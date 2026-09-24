@@ -6,8 +6,13 @@
 export const images = {
   logo: '/images/logo_text-1.png',
   logoDark: '/images/logo_text-1.png',
-  /** Wide headshot, doctor on the right: leaves room for the headline. */
-  hero: '/images/C1A3602-2-scaled-e1747238929259.jpg',
+  /** Main hero photo (16:9, shown uncropped). */
+  hero: '/images/bhalla-main.jpg',
+  /** Wide headshot, doctor on the right. */
+  headshotWide: '/images/C1A3602-2-scaled-e1747238929259.jpg',
+  /** Commons Clinic (parent company) logos. */
+  commonsLogo: '/images/commons-logo-black.svg',
+  commonsLogoWhite: '/images/commons-logo-white.svg',
   /** Portrait, arms crossed. */
   doctorPortrait: '/images/C1A3602-scaled-e1747304153775.jpg',
   /** Explaining a spine model to a patient (standing). */
@@ -35,6 +40,7 @@ export const images = {
 };
 
 export const site = {
+  affiliation: { name: 'Commons Clinic', url: 'https://commonsclinic.com/' },
   name: 'Amandeep Bhalla, MD',
   shortName: 'Bhalla Spine',
   doctor: 'Dr. Amandeep Bhalla',

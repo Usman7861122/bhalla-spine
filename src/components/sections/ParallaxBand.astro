@@ -5,6 +5,7 @@
  * Works on iOS Safari (unlike background-attachment: fixed).
  */
 import Button from '@components/ui/Button.astro';
+import { images, site } from '@data/site';
 
 interface Props {
   src: string;
@@ -27,6 +28,13 @@ const { src, alt, eyebrow, title, text, cta, stats = [], position = 'center 40%'
     <div class="band-veil"></div>
   </div>
   <span class="sr-only">{alt}</span>
+  <!-- Faded Commons Clinic watermark -->
+  <img
+    src={images.commonsLogoWhite}
+    alt=""
+    aria-hidden="true"
+    class="pointer-events-none absolute right-6 top-16 w-[min(55vw,40rem)] opacity-[0.07] lg:right-16"
+  />
 
   <div class="container-x relative flex min-h-[85vh] flex-col justify-end py-20 md:py-28">
     <div class="max-w-2xl">
@@ -39,6 +47,17 @@ const { src, alt, eyebrow, title, text, cta, stats = [], position = 'center 40%'
         </div>
       )}
     </div>
+
+    <a
+      href={site.affiliation.url}
+      target="_blank"
+      rel="noopener"
+      class="group mt-10 inline-flex items-center gap-4 text-white/60 transition-colors hover:text-white"
+      aria-label={`Part of ${site.affiliation.name} (opens in a new tab)`}
+    >
+      <span class="eyebrow">Part of</span>
+      <img src={images.commonsLogoWhite} alt={site.affiliation.name} width="110" height="30" class="h-6 w-auto opacity-80 transition-opacity group-hover:opacity-100" />
+    </a>
 
     {stats.length > 0 && (
       <ul class="mt-14 grid gap-8 border-t border-white/20 pt-8 sm:grid-cols-3">

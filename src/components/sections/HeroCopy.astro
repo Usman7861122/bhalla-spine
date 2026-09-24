@@ -1,0 +1,35 @@
+---
+/** Text block inside the home hero panel. Shared by desktop and mobile layouts. */
+import Button from '@components/ui/Button.astro';
+import { site, images } from '@data/site';
+
+const trained = ['UCLA', 'Harvard', 'Massachusetts General'];
+---
+
+<p class="eyebrow gold-rule text-gold">{site.role}</p>
+<h1 class="display mt-5 text-[clamp(2.6rem,4.3vw,4.1rem)] leading-[1.02] text-ink">
+  Get back to <em class="font-light italic text-gold">activities</em> you enjoy.
+</h1>
+<p class="mt-6 max-w-md text-[1.05rem] leading-relaxed text-slate">
+  Minimally invasive, motion-preserving and robotic-assisted spine care, delivered with evidence and compassion in Long Beach.
+</p>
+<div class="mt-8 flex flex-wrap gap-3">
+  <Button href="/contact">Book a consultation</Button>
+  <Button href="#about" variant="outline">Meet Dr. Bhalla</Button>
+</div>
+
+<div class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-line pt-6">
+  <span class="eyebrow text-mist">Trained at</span>
+  {trained.map((t) => <span class="display text-xl text-ink">{t}</span>)}
+</div>
+
+<a
+  href={site.affiliation.url}
+  target="_blank"
+  rel="noopener"
+  class="group mt-6 inline-flex items-center gap-4 text-mist transition-colors hover:text-ink"
+  aria-label={`Affiliated with ${site.affiliation.name} (opens in a new tab)`}
+>
+  <span class="eyebrow">Affiliated with</span>
+  <img src={images.commonsLogo} alt={site.affiliation.name} width="110" height="30" class="h-6 w-auto opacity-80 transition-opacity group-hover:opacity-100" />
+</a>

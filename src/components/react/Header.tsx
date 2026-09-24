@@ -3,15 +3,16 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { nav, services, conditionGroups, featuredConditions, site } from '@data/site';
 import { cn } from '@lib/utils';
 
+type HeaderMode = 'transparent' | 'light' | 'solid';
 interface Props {
-  transparent?: boolean;
+  mode?: HeaderMode;
 }
 
 type MegaKey = 'services' | 'conditions';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export default function Header({ transparent = false }: Props) {
+export default function Header({ mode: initialMode = 'solid' }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [mega, setMega] = useState<MegaKey | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,10 +21,10 @@ export default function Header({ transparent = false }: Props) {
   const headerRef = useRef<HTMLElement>(null);
 
   // Persisted across page transitions: follow the new page's header mode.
-  const [mode, setMode] = useState(transparent);
+  const [mode, setMode] = useState<HeaderMode>(initialMode);
   useEffect(() => {
     const sync = () => {
-      setMode(document.body.dataset.header === 'transparent');
+      setMode((document.body.dataset.header as HeaderMode) || 'solid');
       setMega(null);
       setMobileOpen(false);
     };
@@ -67,7 +68,9 @@ export default function Header({ transparent = false }: Props) {
     closeTimer.current = window.setTimeout(() => setMega(null), 120);
   };
 
-  const onDark = mode && !scrolled && !mega && !mobileOpen;
+  const floating = !scrolled && !mega && !mobileOpen;
+  const onDark = mode === 'transparent' && floating;
+  const onLight = mode === 'light' && floating;
   const textColor = onDark ? 'text-white' : 'text-ink';
   const mutedColor = onDark ? 'text-white/70 hover:text-white' : 'text-slate hover:text-ink';
 
@@ -78,7 +81,9 @@ export default function Header({ transparent = false }: Props) {
         'fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300',
         onDark
           ? 'bg-transparent'
-          : mega
+          : onLight
+            ? 'bg-porcelain/60 backdrop-blur-md'
+            : mega
             ? 'bg-porcelain border-b border-line'
             : 'bg-porcelain/92 backdrop-blur-md border-b border-line',
       )}
