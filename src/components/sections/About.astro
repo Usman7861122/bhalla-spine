@@ -2,10 +2,12 @@
 import Reveal from '@components/react/Reveal';
 import Button from '@components/ui/Button.astro';
 import CommonsLogo from '@components/ui/CommonsLogo.astro';
+import Aurora from '@components/ui/Aurora.astro';
 import { site, images, appointments } from '@data/site';
 ---
 
 <section id="about" class="section-y relative isolate overflow-hidden">
+  <Aurora />
   <!-- Faded Commons Clinic wordmark in the background -->
   <div aria-hidden="true" class="watermark pointer-events-none absolute -right-[6%] top-1/2 -z-10 w-[70%] -translate-y-1/2 opacity-[0.045] md:w-[48%]">
     <CommonsLogo class="h-auto w-full" />
