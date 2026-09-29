@@ -1,35 +1,46 @@
 ---
-/** Text block inside the home hero panel. Shared by desktop and mobile layouts. */
+/** Text block for the home hero. `tone="light"` = white text over the dark tint (desktop). */
 import Button from '@components/ui/Button.astro';
 import { site, images } from '@data/site';
 
+interface Props {
+  tone?: 'dark' | 'light';
+}
+const { tone = 'dark' } = Astro.props;
+const light = tone === 'light';
 const trained = ['UCLA', 'Harvard', 'Massachusetts General'];
 ---
 
-<p class="eyebrow gold-rule text-gold">{site.role}</p>
-<h1 class="display mt-5 text-[clamp(2.6rem,4.3vw,4.1rem)] leading-[1.02] text-ink">
-  Get back to <em class="font-light italic text-gold">activities</em> you enjoy.
+<p class:list={['eyebrow gold-rule', light ? 'text-gold-light' : 'text-gold']}>{site.role}</p>
+<h1 class:list={['display mt-5 text-[clamp(2.6rem,4.3vw,4.1rem)] leading-[1.02]', light ? 'text-white' : 'text-ink']}>
+  Get back to <em class:list={['font-light italic', light ? 'text-gold-light' : 'text-gold']}>activities</em> you enjoy.
 </h1>
-<p class="mt-6 max-w-md text-[1.05rem] leading-relaxed text-slate">
+<p class:list={['mt-6 max-w-md text-[1.05rem] leading-relaxed', light ? 'text-white/80' : 'text-slate']}>
   Minimally invasive, motion-preserving and robotic-assisted spine care, delivered with evidence and compassion in Long Beach.
 </p>
 <div class="mt-8 flex flex-wrap gap-3">
-  <Button href="/contact">Book a consultation</Button>
-  <Button href="#about" variant="outline">Meet Dr. Bhalla</Button>
+  <Button href="/contact" variant={light ? 'light' : 'dark'}>Book a consultation</Button>
+  <Button href="#about" variant={light ? 'outline-light' : 'outline'}>Meet Dr. Bhalla</Button>
 </div>
 
-<div class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-line pt-6">
-  <span class="eyebrow text-mist">Trained at</span>
-  {trained.map((t) => <span class="display text-xl text-ink">{t}</span>)}
+<div class:list={['mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 border-t pt-6', light ? 'border-white/20' : 'border-line']}>
+  <span class:list={['eyebrow', light ? 'text-white/50' : 'text-mist']}>Trained at</span>
+  {trained.map((t) => <span class:list={['display text-xl', light ? 'text-white' : 'text-ink']}>{t}</span>)}
 </div>
 
 <a
   href={site.affiliation.url}
   target="_blank"
   rel="noopener"
-  class="group mt-6 inline-flex items-center gap-4 text-mist transition-colors hover:text-ink"
+  class:list={['group mt-6 inline-flex items-center gap-4 transition-colors', light ? 'text-white/60 hover:text-white' : 'text-mist hover:text-ink']}
   aria-label={`Affiliated with ${site.affiliation.name} (opens in a new tab)`}
 >
   <span class="eyebrow">Affiliated with</span>
-  <img src={images.commonsLogo} alt={site.affiliation.name} width="110" height="30" class="h-6 w-auto opacity-80 transition-opacity group-hover:opacity-100" />
+  <img
+    src={light ? images.commonsLogoWhite : images.commonsLogo}
+    alt={site.affiliation.name}
+    width="110"
+    height="30"
+    class="h-6 w-auto opacity-80 transition-opacity group-hover:opacity-100"
+  />
 </a>

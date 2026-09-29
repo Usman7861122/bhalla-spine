@@ -1,7 +1,7 @@
 ---
 /**
  * Home hero. The photo is shown at its natural 16:9 size, never cropped or zoomed.
- * Desktop: photo fills the width, text sits in a frosted panel over the left side.
+ * Desktop: photo fills the width, white text over a soft dark tint on the left.
  * Mobile: photo on top at natural size, text below.
  */
 import HeroCopy from '@components/sections/HeroCopy.astro';
@@ -20,20 +20,19 @@ import { site, images } from '@data/site';
       decoding="async"
       class="hero-photo block aspect-[4/3] w-full object-cover object-[78%_center] sm:aspect-[16/10] sm:object-[70%_center] lg:aspect-auto lg:h-auto lg:object-fill"
     />
-    <!-- Slight gradient on the left so the text stays readable; photo itself is untouched -->
+    <!-- Soft dark tint on the left so the text stays readable; photo itself is untouched -->
     <div
       aria-hidden="true"
       class="absolute inset-0 hidden lg:block"
-      style="background: linear-gradient(90deg, rgba(244,246,247,0.88) 0%, rgba(244,246,247,0.7) 30%, rgba(244,246,247,0.25) 46%, rgba(244,246,247,0) 58%);"
+      style="background: linear-gradient(90deg, rgba(15,31,46,0.9) 0%, rgba(15,31,46,0.74) 28%, rgba(15,31,46,0.42) 46%, rgba(15,31,46,0.14) 60%, rgba(15,31,46,0) 70%);"
     >
     </div>
-    <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-porcelain to-transparent"></div>
 
     <!-- Desktop: text directly over the photo -->
     <div class="pointer-events-none absolute inset-0 hidden lg:block">
       <div class="container-x flex h-full items-center pt-16">
         <div class="hero-in pointer-events-auto max-w-[29rem]">
-          <HeroCopy />
+          <HeroCopy tone="light" />
         </div>
       </div>
     </div>
