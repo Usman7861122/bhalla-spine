@@ -38,7 +38,7 @@ import { services, images } from '@data/site';
 
     <ul class="grid gap-px overflow-hidden rounded-sm bg-line-dark sm:grid-cols-2 lg:col-span-8">
       {services.map((s, i) => (
-        <Reveal client:visible as="li" delay={(i % 2) * 0.08} className="bg-ink">
+        <Reveal client:visible as="li" delay={(i % 2) * 0.08} className={services.length % 2 === 1 && i === services.length - 1 ? "bg-ink sm:col-span-2" : "bg-ink"}>
           <a
             href={`/services/${s.slug}`}
             class="spot card-line group flex h-full flex-col justify-between p-8 transition-colors duration-300 hover:bg-ink-soft md:p-10"

@@ -17,7 +17,7 @@ interface Props {
 }
 const {
   eyebrow = 'Care services',
-  title = 'Six ways we treat the neck and back.',
+  title = 'Seven ways we treat the neck and back.',
   lede = 'Every plan starts with the least invasive option that will work. Surgery only when it is the right answer.',
   exclude,
 } = Astro.props;
@@ -34,10 +34,10 @@ const list = services.filter((s) => s.slug !== exclude);
 
     <ul class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
       {list.map((s, i) => (
-        <Reveal client:visible as="li" delay={(i % 3) * 0.08}>
+        <Reveal client:visible as="li" delay={(i % 3) * 0.08} className={list.length % 3 === 1 && i === list.length - 1 ? "lg:col-span-3" : undefined}>
           <a
             href={`/services/${s.slug}`}
-            class="cell group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-sm bg-ink p-8 text-white sm:aspect-[3/4] lg:aspect-[4/5]"
+            class:list={["cell group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-sm bg-ink p-8 text-white sm:aspect-[3/4]", list.length % 3 === 1 && i === list.length - 1 ? "lg:aspect-[21/8] lg:max-w-none" : "lg:aspect-[4/5]"]}
           >
             <img
               src={s.image}

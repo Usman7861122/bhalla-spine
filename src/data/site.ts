@@ -65,147 +65,8 @@ export const site = {
   },
 };
 
-/** Long-form content for a service detail page. Optional per service. */
-export interface ServiceContent {
-  /** Photos used across the page: [hero, overview, candidates]. */
-  photos: string[];
-  intro: string;
-  whatIs: { title: string; text: string[] };
-  candidates: { title: string; text: string; conditions: string[]; symptoms: string[] };
-  benefits: { title: string; text: string; items: { title: string; text: string }[] };
-  recovery: { title: string; text: string; steps: { label: string; title: string; text: string }[] };
-  safety: { title: string; text: string };
-  faqs: { q: string; a: string }[];
-}
-
-const cervicalFusionContent: ServiceContent = {
-  photos: [
-    '/images/service-pages/cervical-fusion/cervical-fusion-2.jpg',
-    '/images/service-pages/cervical-fusion/cervical-fusion-1.jpg',
-    '/images/service-pages/cervical-fusion/cervical-fusion-3.jpg',
-  ],
-  intro:
-    'Cervical fusion is an advanced surgical procedure designed to stabilize the cervical spine and relieve chronic neck pain, nerve compression and spinal instability. It is recommended when conservative treatments such as medication, physical therapy or injections have not worked.',
-  whatIs: {
-    title: 'What is cervical fusion surgery?',
-    text: [
-      'Cervical fusion is a surgical procedure that joins two or more vertebrae in the neck into a single, stable unit. It treats pain caused by spinal instability, herniated discs, degenerative disc disease or nerve compression.',
-      'During the procedure, bone graft and small implants such as plates or screws are placed to hold the vertebrae together while they heal. Once fusion occurs, the affected vertebrae no longer move independently, which reduces painful motion and protects the spinal cord and nerves.',
-    ],
-  },
-  candidates: {
-    title: 'Who is a candidate?',
-    text: 'Patients may be candidates for cervical fusion when non-surgical treatments have not provided adequate relief. A thorough examination, imaging studies and a review of your medical history determine whether surgery is the right step.',
-    conditions: [
-      'Cervical radiculopathy',
-      'Cervical myelopathy',
-      'Spinal instability',
-      'Severe degenerative disc disease',
-      'Traumatic injuries of the neck',
-    ],
-    symptoms: ['Persistent neck pain', 'Numbness or tingling', 'Weakness in the arms', 'Signs of spinal cord compression'],
-  },
-  benefits: {
-    title: 'What are the benefits?',
-    text: 'The primary goal is to stabilize the spine and take pressure off the affected nerves or spinal cord. Most patients report improved mobility and a better quality of life, with the trade-off that the fused segment no longer moves.',
-    items: [
-      { title: 'Less neck and arm pain', text: 'Painful motion at the treated level stops once the vertebrae fuse.' },
-      { title: 'Improved strength and sensation', text: 'Relieving nerve compression lets numbness, tingling and weakness recover.' },
-      { title: 'Better spinal alignment', text: 'Implants restore and hold the natural curve of the neck.' },
-      { title: 'Prevents further damage', text: 'A stable segment protects against progressive degeneration or instability.' },
-    ],
-  },
-  recovery: {
-    title: 'How long is the recovery?',
-    text: 'Recovery depends on the number of levels treated, your overall health and the surgical technique used. Regular follow-up visits track your progress and confirm the bone is healing.',
-    steps: [
-      { label: 'First days', title: 'Home and moving', text: 'Most patients go home within a day or two and walk from the start. A cervical collar may be worn for support.' },
-      { label: 'First weeks', title: 'Light activity', text: 'Light activities usually resume within a few weeks. Structured rehabilitation begins as healing allows.' },
-      { label: 'Several months', title: 'Solid fusion', text: 'Complete bone fusion takes several months. Follow-up imaging confirms the segment has healed.' },
-    ],
-  },
-  safety: {
-    title: 'Is cervical fusion safe?',
-    text: 'Cervical fusion is a well-established and commonly performed spine surgery with a strong track record of success when performed by experienced spine specialists. As with any surgery there are potential risks, including infection, bleeding, nerve irritation or delayed bone healing. Advances in surgical technology, imaging and minimally invasive techniques have significantly improved safety and outcomes.',
-  },
-  faqs: [
-    {
-      q: 'Who is a candidate for cervical fusion?',
-      a: 'Patients whose neck pain, numbness, tingling or arm weakness has not improved with medication, physical therapy or injections, and whose imaging shows instability, severe disc degeneration, nerve compression or injury. Dr. Bhalla confirms with an examination, imaging and your history.',
-    },
-    {
-      q: 'What are the benefits of cervical fusion?',
-      a: 'Reduced neck and arm pain, improved strength and sensation, better spinal alignment, and protection against further degeneration or instability. The fused segment loses motion, but most patients find their overall mobility and quality of life improve.',
-    },
-    {
-      q: 'How long is the recovery after cervical fusion surgery?',
-      a: 'Light activities typically resume within a few weeks. Complete bone fusion takes several months. You may wear a cervical collar for a period and take part in structured rehabilitation, with regular follow-up visits to monitor healing.',
-    },
-    {
-      q: 'Is cervical fusion a safe procedure?',
-      a: 'Yes. It is a well-established spine surgery with a strong track record when performed by experienced specialists. Risks such as infection, bleeding, nerve irritation or delayed healing exist but are uncommon, and modern techniques have improved safety and outcomes.',
-    },
-  ],
-};
-
-export const services: {
-  slug: string;
-  image: string;
-  title: string;
-  short: string;
-  description: string;
-  content?: ServiceContent;
-}[] = [
-  {
-    slug: 'cervical-fusion',
-    image: '/images/service-pages/cervical-fusion/cervical-fusion-2.jpg',
-    title: 'Cervical Fusion',
-    short: 'Stabilizes the neck by joining vertebrae to relieve pain and restore alignment.',
-    description:
-      'Cervical fusion is a surgical procedure that stabilizes the neck by joining vertebrae, relieving pain, restoring alignment and improving spinal function.',
-    content: cervicalFusionContent,
-  },
-  {
-    slug: 'cervical-herniated-disc',
-    image: '/images/Canal-Stenosis.webp',
-    title: 'Cervical Herniated Disc',
-    short: 'Minimally invasive relief for neck pain, numbness and nerve compression.',
-    description:
-      'A cervical herniated disc occurs when a disc in the neck bulges or ruptures, compressing nerves and causing pain, numbness or weakness.',
-  },
-  {
-    slug: 'cervical-myelopathy',
-    image: '/images/C1A3704-scaled-e1747239020857.jpg',
-    title: 'Cervical Myelopathy',
-    short: 'Treats spinal cord compression in the neck before nerve damage progresses.',
-    description:
-      'Cervical myelopathy is spinal cord compression in the neck causing pain, weakness, numbness, balance issues and possible neurological dysfunction.',
-  },
-  {
-    slug: 'lumbar-fusion',
-    image: '/images/C1A4022-scaled-e1747319220831.jpg',
-    title: 'Lumbar Fusion',
-    short: 'Joins lower-spine vertebrae for stability and lasting relief from chronic back pain.',
-    description:
-      'Lumbar fusion joins lower-spine vertebrae to stabilize movement, relieve chronic back pain and improve spinal alignment.',
-  },
-  {
-    slug: 'disc-replacement-surgery',
-    image: '/images/C1A4003-scaled-e1747321991364.jpg',
-    title: 'Disc Replacement Surgery',
-    short: 'Motion-preserving artificial disc replacement that keeps you moving naturally.',
-    description:
-      'Disc replacement surgery replaces damaged spinal discs with artificial implants to preserve motion and reduce pain.',
-  },
-  {
-    slug: 'minimally-invasive-spine-surgery',
-    image: '/images/C1A4046-scaled-e1747322027611.jpg',
-    title: 'Minimally Invasive Spine Surgery',
-    short: 'Small incisions and advanced tools for less pain and a faster recovery.',
-    description:
-      'Minimally invasive spine surgery uses small incisions and advanced tools to treat spinal conditions, reducing pain, recovery time and complications.',
-  },
-];
+export { services } from './services';
+export type { Service, ServiceContent } from './services';
 
 /** Conditions and procedures, grouped for the Conditions mega menu. */
 export const conditionGroups = [
@@ -236,8 +97,6 @@ export const conditionGroups = [
     title: 'Cervical spine',
     overview: 'The neck. Conditions and procedures from the base of the skull to the shoulders.',
     items: [
-      { slug: 'acdf', title: 'Anterior cervical discectomy and fusion (ACDF)', kind: 'Procedure' },
-      { slug: 'cervical-disc-replacement', title: 'Cervical disc replacement', kind: 'Motion preserving' },
       { slug: 'cervical-herniated-disc', title: 'Cervical herniated disc', kind: 'Disc' },
       { slug: 'cervical-radiculopathy', title: 'Cervical radiculopathy', kind: 'Pinched nerve' },
       { slug: 'cervical-myelopathy', title: 'Cervical myelopathy', kind: 'Cord compression' },
@@ -250,13 +109,10 @@ export const conditionGroups = [
     title: 'Lumbar spine',
     overview: 'The lower back. The most common source of pain we see.',
     items: [
-      { slug: 'lumbar-disc-replacement', title: 'Lumbar disc replacement', kind: 'Motion preserving' },
-      { slug: 'lumbar-facet-and-epidural-injections', title: 'Lumbar facet and epidural injections', kind: 'Non-surgical' },
       { slug: 'lumbar-herniated-disc', title: 'Lumbar herniated disc', kind: 'Disc' },
       { slug: 'lumbar-radiculopathy', title: 'Lumbar radiculopathy', kind: 'Sciatica' },
       { slug: 'lumbar-stenosis', title: 'Lumbar stenosis', kind: 'Narrowing' },
       { slug: 'lumbar-trauma', title: 'Lumbar trauma', kind: 'Injury' },
-      { slug: 'lumbar-fusion', title: 'Lumbar fusion', kind: 'Procedure' },
     ],
   },
   {
@@ -264,20 +120,6 @@ export const conditionGroups = [
     title: 'Thoracic spine',
     overview: 'The mid back, between the neck and the lower back.',
     items: [{ slug: 'thoracic-stenosis-myelopathy', title: 'Thoracic stenosis and myelopathy', kind: 'Cord compression' }],
-  },
-  {
-    id: 'surgery',
-    title: 'Spinal surgery',
-    overview: 'Procedures we offer when non-surgical care is not enough.',
-    items: [
-      { slug: 'minimally-invasive-spinal-surgery', title: 'Minimally invasive spinal surgery', kind: 'Procedure' },
-      { slug: 'osteoporotic-compression-fractures', title: 'Osteoporotic compression fractures', kind: 'Fracture' },
-      { slug: 'revision-spinal-surgery', title: 'Revision spinal surgery', kind: 'Procedure' },
-      { slug: 'spinal-cord-stimulation', title: 'Spinal cord stimulation', kind: 'Pain management' },
-      { slug: 'minimally-invasive-scoliosis-surgery', title: 'Minimally invasive scoliosis surgery', kind: 'Procedure' },
-      { slug: 'balloon-kyphoplasty', title: 'Balloon kyphoplasty', kind: 'Fracture repair' },
-      { slug: 'sacroiliac-joint-fusion', title: 'Sacroiliac joint minimally invasive fusion', kind: 'Procedure' },
-    ],
   },
 ];
 

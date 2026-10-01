@@ -347,13 +347,9 @@ function ServicesMega() {
 }
 
 function ConditionsMega() {
-  // Pair the two smallest groups into one column so the panel stays four columns wide.
-  const columns: (typeof conditionGroups)[] = [
-    [conditionGroups[0], conditionGroups[1]],
-    [conditionGroups[2]],
-    [conditionGroups[3], conditionGroups[4]],
-    [conditionGroups[5]],
-  ];
+  // Four columns: the two smallest groups share one.
+  const [conditions, deformities, cervical, lumbar, thoracic] = conditionGroups;
+  const columns: (typeof conditionGroups)[] = [[conditions], [deformities, thoracic], [cervical], [lumbar]];
   return (
     <div className="container-x grid grid-cols-12 gap-10 py-10">
       <MegaIntro
