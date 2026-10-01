@@ -176,7 +176,7 @@ export const services: Service[] = [
       'Cervical disc replacement removes a damaged disc in the neck and replaces it with an artificial disc that preserves motion, relieving arm pain, numbness and weakness.',
     image: img.nerve,
     content: {
-      photos: [img.nerve, '/images/service-pages/cervical-disc-replacement/2.jpg', '/images/service-pages/cervical-disc-replacement/3.jpg'],
+      photos: [img.nerve, '/images/service-pages/cervical-disc-replacement/2.jpg', img.consultWindow],
       intro:
         'Cervical disc replacement, also called cervical arthroplasty, relieves pressure on a pinched nerve or the spinal cord in the neck while keeping the segment mobile. It is the motion preserving alternative to anterior cervical fusion.',
       whatIs: {
