@@ -1,0 +1,38 @@
+# Builds the site and copies the files to a private S3 bucket on every push to main.
+# This only stores the files. It does not put the site live.
+name: Upload site to S3
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write # lets GitHub prove its identity to AWS, no passwords stored
+  contents: read
+
+concurrency:
+  group: upload-s3
+  cancel-in-progress: true
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Copy dist to S3
+        run: aws s3 sync dist s3://bhalla-spine-site --delete
