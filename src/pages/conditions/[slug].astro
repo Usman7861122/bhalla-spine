@@ -3,7 +3,9 @@ import PageLayout from '@layouts/PageLayout.astro';
 import Container from '@components/ui/Container.astro';
 import Button from '@components/ui/Button.astro';
 import Icon from '@components/ui/Icon.astro';
-import HeroContact from '@components/sections/HeroContact.astro';
+import HeroLocal from '@components/sections/HeroLocal.astro';
+import LocalSection from '@components/sections/LocalSection.astro';
+import { localFor } from '@data/local';
 import ConditionGroupPage from '@components/sections/ConditionGroupPage.astro';
 import InTheNews from '@components/sections/InTheNews.astro';
 import { pressForCondition } from '@data/press';
@@ -40,20 +42,21 @@ const L = {
   ...(c?.labels ?? {}),
 };
 const heroImage = c?.photos[0] ?? images.handshakeScreen;
+const local = localFor(condition?.title ?? '', 'condition');
 ---
 
 {groupPage ? (
   <ConditionGroupPage group={groupPage} />
 ) : (
 <PageLayout
-  title={condition.title}
-  eyebrow={group}
+  title={`${condition.title} in ${local.city}`}
+  eyebrow={`${group} · ${local.city}`}
   lede={c?.intro}
   image={heroImage}
   imageAlt=""
   position={c ? 'center 30%' : '70% 30%'}
 >
-  <HeroContact slot="hero" />
+  <HeroLocal slot="hero" text={local.banner} />
   {c ? (
     <>
       <!-- 1. Overview: text + photo -->
@@ -240,6 +243,9 @@ const heroImage = c?.photos[0] ?? images.handshakeScreen;
           </div>
         </Container>
       </section>
+
+      <!-- Local focus -->
+      <LocalSection title={local.sectionTitle} text={local.text} areas={local.areas} />
 
       <!-- 8. In the news (only when there is coverage) -->
       <InTheNews items={news} dark />

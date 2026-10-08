@@ -1,0 +1,37 @@
+---
+/**
+ * "Near you" section: city focused heading, short copy and the communities we serve.
+ */
+import Container from '@components/ui/Container.astro';
+import Button from '@components/ui/Button.astro';
+import Reveal from '@components/react/Reveal';
+
+interface Props {
+  title: string;
+  text: string[];
+  areas: string[];
+  /** Background: keep it different from the section above. */
+  tone?: 'white' | 'bone';
+}
+const { title, text, areas, tone = 'white' } = Astro.props;
+---
+
+<section class:list={['section-y', tone === 'bone' && 'bg-bone/60']}>
+  <Container class="grid gap-12 lg:grid-cols-12 lg:gap-20">
+    <Reveal client:visible className="lg:col-span-6">
+      <p class="eyebrow gold-rule text-gold">Near you</p>
+      <h2 class="display mt-5 text-display-md text-ink">{title}</h2>
+      {text.map((t) => <p class="mt-6 text-lg leading-relaxed">{t}</p>)}
+      <div class="mt-10"><Button href="/contact">Book a consultation</Button></div>
+    </Reveal>
+    <Reveal client:visible delay={0.1} className="lg:col-span-6">
+      <p class="eyebrow text-gold">Patients come to us from</p>
+      <ul class="mt-4 flex flex-wrap gap-3">
+        {areas.map((a) => (
+          <li class="rounded-full border border-line bg-porcelain px-5 py-2.5 text-[0.95rem] text-ink">{a}</li>
+        ))}
+      </ul>
+      <p class="mt-6 text-[0.9rem] text-mist">Not on the list? We see patients from across Southern California.</p>
+    </Reveal>
+  </Container>
+</section>

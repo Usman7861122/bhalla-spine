@@ -6,7 +6,9 @@ import Icon from '@components/ui/Icon.astro';
 import Reveal from '@components/react/Reveal';
 import ScrollTimeline from '@components/react/ScrollTimeline';
 import ServicesGrid from '@components/sections/ServicesGrid.astro';
-import HeroContact from '@components/sections/HeroContact.astro';
+import HeroLocal from '@components/sections/HeroLocal.astro';
+import LocalSection from '@components/sections/LocalSection.astro';
+import { localFor } from '@data/local';
 import InTheNews from '@components/sections/InTheNews.astro';
 import { pressForService } from '@data/press';
 import { services, site, images } from '@data/site';
@@ -19,31 +21,18 @@ const { service } = Astro.props;
 const c = service.content;
 const news = pressForService(service.slug);
 const heroImage = c?.photos[0] ?? images.consultWindow;
-const local = c?.local;
+const local = c?.local ?? localFor(service.title, 'service');
 ---
 
 <PageLayout
-  title={local ? `${service.title} in ${local.city}` : service.title}
-  eyebrow={local?.eyebrow ?? 'Care services'}
+  title={`${service.title} in ${local.city}`}
+  eyebrow={local.eyebrow}
   lede={c?.intro ?? service.description}
   image={heroImage}
   imageAlt=""
   position="center 35%"
 >
-  {local ? (
-    <div slot="hero" class="mt-10 max-w-2xl border-t border-white/15 pt-8">
-      <p class="flex items-start gap-3 text-[0.98rem] leading-relaxed text-white/80">
-        <Icon name="pin" class="mt-0.5 h-5 w-5 shrink-0 text-gold-light" />
-        {local.banner}
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <Button href="/contact" variant="light">Book a consultation</Button>
-        <Button href={site.phoneHref} variant="outline-light">{site.phone}</Button>
-      </div>
-    </div>
-  ) : (
-    <HeroContact slot="hero" />
-  )}
+  <HeroLocal slot="hero" text={local.banner} />
   {c ? (
     <>
       <!-- 1. What is it: text + illustration -->
@@ -106,28 +95,8 @@ const local = c?.local;
         </Container>
       </section>
 
-      <!-- Local focus (only when the service sets `local`) -->
-      {local && (
-        <section class="section-y bg-bone/60">
-          <Container class="grid gap-12 lg:grid-cols-12 lg:gap-20">
-            <Reveal client:visible className="lg:col-span-6">
-              <p class="eyebrow gold-rule text-gold">Near you</p>
-              <h2 class="display mt-5 text-display-md text-ink">{local.sectionTitle}</h2>
-              {local.text.map((t) => <p class="mt-6 text-lg leading-relaxed">{t}</p>)}
-              <div class="mt-10"><Button href="/contact">Book a consultation</Button></div>
-            </Reveal>
-            <Reveal client:visible delay={0.1} className="lg:col-span-6">
-              <p class="eyebrow text-gold">Patients come to us from</p>
-              <ul class="mt-4 flex flex-wrap gap-3">
-                {local.areas.map((a) => (
-                  <li class="rounded-full border border-line bg-porcelain px-5 py-2.5 text-[0.95rem] text-ink">{a}</li>
-                ))}
-              </ul>
-              <p class="mt-6 text-[0.9rem] text-mist">Not on the list? We see patients from across Southern California.</p>
-            </Reveal>
-          </Container>
-        </section>
-      )}
+      <!-- Local focus -->
+      <LocalSection title={local.sectionTitle} text={local.text} areas={local.areas} tone="bone" />
 
       <!-- 3. Benefits: four cards -->
       <section class="section-y">
