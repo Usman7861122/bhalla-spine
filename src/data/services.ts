@@ -16,6 +16,18 @@ export interface ServiceContent {
   recovery: { title: string; text: string; steps: { label: string; title: string; text: string }[] };
   safety: { title: string; text: string };
   faqs: { q: string; a: string }[];
+  /** Optional city focus. Only set on pages that should lead with where care is offered. */
+  local?: {
+    city: string;
+    /** Banner eyebrow, e.g. "Care services · Long Beach, CA". */
+    eyebrow: string;
+    /** Banner line shown in place of the full contact block. */
+    banner: string;
+    /** Nearby communities patients come from. */
+    areas: string[];
+    sectionTitle: string;
+    text: string[];
+  };
 }
 
 export interface Service {
@@ -52,6 +64,17 @@ export const services: Service[] = [
     image: '/images/service-pages/minimally-invasive-spinal-surgery/1.jpg',
     content: {
       photos: ['/images/service-pages/minimally-invasive-spinal-surgery/1.jpg', '/images/service-pages/minimally-invasive-spinal-surgery/2.jpg', '/images/service-pages/minimally-invasive-spinal-surgery/3.jpg'],
+      local: {
+        city: 'Long Beach, CA',
+        eyebrow: 'Care services · Long Beach, CA',
+        banner: 'Minimally invasive spine surgery in Long Beach, with patients welcome from across South Bay, Orange County and the greater Los Angeles area.',
+        areas: ['Long Beach', 'Signal Hill', 'Lakewood', 'Seal Beach', 'Los Alamitos', 'Cypress', 'Bellflower', 'Torrance', 'Huntington Beach', 'Carson'],
+        sectionTitle: 'Minimally invasive spine surgery in Long Beach, CA',
+        text: [
+          'Dr. Bhalla performs minimally invasive spine surgery for people in Long Beach and the surrounding cities, and leads the Spine Center at MemorialCare Long Beach Medical Center.',
+          'If you live in Signal Hill, Lakewood, Seal Beach, Orange County or anywhere nearby, a consultation is a short drive away. Many procedures are done as outpatient surgery, so you can recover at home.',
+        ],
+      },
       intro:
         'Minimally invasive spinal surgery treats the same problems as traditional open surgery through incisions often under an inch long. Specialized retractors, a microscope or endoscope and real time imaging let Dr. Bhalla reach the spine between the muscles instead of cutting through them.',
       whatIs: {
