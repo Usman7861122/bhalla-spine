@@ -2,7 +2,6 @@
 import PageLayout from '@layouts/PageLayout.astro';
 import Container from '@components/ui/Container.astro';
 import Blog from '@components/sections/Blog.astro';
-import CtaBand from '@components/sections/CtaBand.astro';
 import { posts } from '@data/site';
 
 export function getStaticPaths() {
@@ -19,5 +18,4 @@ const { post } = Astro.props;
     </Container>
   </section>
   <Blog />
-  <CtaBand eyebrow="Questions about your back?" title="Read less. Ask us." />
 </PageLayout>

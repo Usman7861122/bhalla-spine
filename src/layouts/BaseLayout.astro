@@ -3,6 +3,8 @@ import '@styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import Header from '@components/react/Header';
 import Footer from '@components/Footer.astro';
+import CookieConsent from '@components/ui/CookieConsent.astro';
+import MobileActionBar from '@components/ui/MobileActionBar.astro';
 import { site } from '@data/site';
 
 interface Props {
@@ -39,7 +41,7 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | Orthopedic
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen flex flex-col" data-header={headerMode}>
+  <body class="min-h-screen flex flex-col pb-[3.6rem] md:pb-0" data-header={headerMode}>
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-white"
@@ -51,6 +53,8 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | Orthopedic
       <slot />
     </main>
     <Footer />
+    <MobileActionBar />
+    <CookieConsent />
     <script>
       import '@lib/spotlight';
     </script>

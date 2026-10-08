@@ -1,0 +1,157 @@
+---
+/**
+ * Overview page for one group of conditions (e.g. Cervical spine).
+ * Lists every condition in the group as a photo cell, then links to the other regions.
+ */
+import PageLayout from '@layouts/PageLayout.astro';
+import Container from '@components/ui/Container.astro';
+import Button from '@components/ui/Button.astro';
+import Icon from '@components/ui/Icon.astro';
+import Reveal from '@components/react/Reveal';
+import HeroContact from '@components/sections/HeroContact.astro';
+import WhyChoose from '@components/sections/WhyChoose.astro';
+import { conditionGroups, site, images } from '@data/site';
+import { getConditionContent } from '@data/conditions';
+
+interface Props {
+  group: (typeof conditionGroups)[number];
+}
+const { group } = Astro.props;
+
+/* Each condition's hero photo becomes its card background. */
+const items = group.items.map((c) => {
+  const content = getConditionContent(c.slug);
+  return { ...c, image: content?.photos[0] ?? images.spineModel, intro: content?.intro ?? '' };
+});
+const heroImage = items[0]?.image ?? images.handshakeScreen;
+const others = conditionGroups.filter((g) => g.id !== group.id);
+const total = conditionGroups.reduce((n, g) => n + g.items.length, 0);
+---
+
+<PageLayout
+  title={group.title}
+  eyebrow="Conditions we treat"
+  lede={group.intro}
+  description={`${group.title}: ${group.overview} Conditions diagnosed and treated by Dr. Amandeep Bhalla in Long Beach, CA.`}
+  image={heroImage}
+  imageAlt=""
+  position="center 30%"
+>
+  <HeroContact slot="hero" />
+
+  <!-- Intro: overview + count -->
+  <section class="section-y">
+    <Container class="grid items-start gap-12 lg:grid-cols-12 lg:gap-20">
+      <Reveal client:visible className="lg:col-span-7">
+        <p class="eyebrow gold-rule text-gold">Overview</p>
+        <h2 class="display mt-5 text-display-md text-ink">{group.overview}</h2>
+        <p class="mt-6 text-lg leading-relaxed">
+          Below are the {items.length === 1 ? 'condition' : `${items.length} conditions`} in this group that Dr. Bhalla diagnoses and treats. Each page explains what it is, how it is found and the full range of treatment, from therapy to the least invasive procedure that will work.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <Button href="/contact">Book a consultation</Button>
+          <Button href={site.phoneHref} variant="outline">{site.phone}</Button>
+        </div>
+      </Reveal>
+      <Reveal client:visible delay={0.1} className="lg:col-span-5">
+        <dl class="grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-line bg-line">
+          <div class="bg-porcelain p-7">
+            <dt class="eyebrow text-gold">In this group</dt>
+            <dd class="display mt-3 text-5xl text-ink">{items.length}</dd>
+          </div>
+          <div class="bg-porcelain p-7">
+            <dt class="eyebrow text-gold">Across the spine</dt>
+            <dd class="display mt-3 text-5xl text-ink">{total}</dd>
+          </div>
+          <div class="col-span-2 bg-porcelain p-7">
+            <dt class="eyebrow text-gold">Our approach</dt>
+            <dd class="mt-3 leading-relaxed">Most patients in this group never need an operation. When they do, Dr. Bhalla uses minimally invasive, motion preserving and robotic assisted techniques.</dd>
+          </div>
+        </dl>
+      </Reveal>
+    </Container>
+  </section>
+
+  <!-- Condition cells: dark section, 3 per row -->
+  <section data-dark class="section-y bg-ink text-white">
+    <Container>
+      <div class="max-w-3xl">
+        <p class="eyebrow gold-rule text-gold-light">{group.title}</p>
+        <h2 class="display mt-5 text-display-lg">Conditions in this group.</h2>
+      </div>
+      <ul class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        {items.map((c, i) => (
+          <Reveal client:visible as="li" delay={(i % 3) * 0.08} className={items.length % 3 === 1 && i === items.length - 1 ? 'lg:col-span-3' : undefined}>
+            <a
+              href={`/conditions/${c.slug}`}
+              class:list={[
+                'cell group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-sm bg-ink-soft p-8 text-white sm:aspect-[3/4]',
+                items.length % 3 === 1 && i === items.length - 1 ? 'lg:aspect-[21/8]' : 'lg:aspect-[4/5]',
+              ]}
+            >
+              <img
+                src={c.image}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-[1.05]"
+              />
+              <div
+                aria-hidden="true"
+                class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(15,31,46,0.15)_0%,rgba(15,31,46,0.45)_45%,rgba(15,31,46,0.94)_100%)]"
+              ></div>
+              <span class="eyebrow text-gold-light">{c.kind}</span>
+              <h3 class="display mt-3 text-[1.9rem] leading-tight transition-transform duration-500 ease-[var(--ease-out-soft)] group-hover:-translate-y-1">{c.title}</h3>
+              <p class="mt-3 max-h-0 overflow-hidden text-[0.95rem] leading-relaxed text-white/75 opacity-0 transition-all duration-500 ease-[var(--ease-out-soft)] group-hover:max-h-32 group-hover:opacity-100 group-focus-visible:max-h-32 group-focus-visible:opacity-100">
+                {c.intro}
+              </p>
+              <span class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-gold-light">
+                Learn more
+                <Icon name="arrow" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+            </a>
+          </Reveal>
+        ))}
+      </ul>
+    </Container>
+  </section>
+
+  <WhyChoose />
+
+  <!-- Other regions -->
+  <section class="section-y bg-bone/60">
+    <Container>
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div class="max-w-2xl">
+          <p class="eyebrow gold-rule text-gold">Other regions</p>
+          <h2 class="display mt-5 text-display-md text-ink">Explore the rest of the spine.</h2>
+        </div>
+        <Button href="/conditions" variant="outline" class="shrink-0">All conditions</Button>
+      </div>
+      <ul class="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        {others.map((g, i) => (
+          <Reveal client:visible as="li" delay={i * 0.06}>
+            <a href={`/conditions/${g.slug}`} class="card-line group flex h-full flex-col bg-porcelain p-7 transition-colors duration-500 hover:bg-white">
+              <p class="eyebrow text-gold">{g.items.length} {g.items.length === 1 ? 'condition' : 'conditions'}</p>
+              <h3 class="display mt-3 text-[1.5rem] leading-snug text-ink transition-colors group-hover:text-gold">{g.title}</h3>
+              <p class="mt-3 text-[0.95rem] leading-relaxed">{g.overview}</p>
+              <span class="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-medium text-ink">
+                View
+                <Icon name="arrow" class="h-4 w-4 text-gold transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+            </a>
+          </Reveal>
+        ))}
+      </ul>
+    </Container>
+  </section>
+</PageLayout>
+
+<style>
+  @media (hover: none) {
+    .cell p {
+      max-height: 8rem;
+      opacity: 1;
+    }
+  }
+</style>

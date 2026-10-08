@@ -57,7 +57,12 @@ export const site = {
     line2: 'Long Beach, CA 90807',
     mapsUrl: 'https://maps.google.com/?q=3610+Long+Beach+Blvd+Suite+202+Long+Beach+CA+90807',
   },
-  hours: 'Monday – Friday, 8:00 AM – 5:00 PM',
+  hours: 'Monday to Friday, 8:00 AM to 5:00 PM',
+  /** Short video about Dr. Bhalla, opened in a pop up from the About section. */
+  video: {
+    facebookUrl: 'https://www.facebook.com/watch/?v=347033505960862',
+    title: 'Dr. Bhalla in the news',
+  },
   social: {
     instagram: '#',
     facebook: '#',
@@ -72,6 +77,8 @@ export type { Service, ServiceContent } from './services';
 export const conditionGroups = [
   {
     id: 'conditions',
+    slug: 'spine-conditions',
+    intro: 'Pain, wear, infection and tumors of the spine itself. Most are managed without surgery, and all begin with a clear diagnosis.',
     title: 'Spine conditions',
     overview: 'Pain, wear and disease of the spine itself. Most are managed without surgery.',
     items: [
@@ -84,6 +91,8 @@ export const conditionGroups = [
   },
   {
     id: 'deformities',
+    slug: 'spinal-deformities',
+    intro: 'Curves and loss of balance in the spine, from adolescent scoliosis to adult flatback. Watched when mild, corrected when they limit life.',
     title: 'Spinal deformities',
     overview: 'Curves and imbalance of the spine, in adolescents and adults.',
     items: [
@@ -94,6 +103,8 @@ export const conditionGroups = [
   },
   {
     id: 'cervical',
+    slug: 'cervical-spine',
+    intro: 'The neck carries the head and every signal to the body. Conditions here show up in the arms, hands and balance, and respond well to modern treatment.',
     title: 'Cervical spine',
     overview: 'The neck. Conditions and procedures from the base of the skull to the shoulders.',
     items: [
@@ -106,6 +117,8 @@ export const conditionGroups = [
   },
   {
     id: 'lumbar',
+    slug: 'lumbar-spine',
+    intro: 'The lower back carries the most load and causes the most pain we see. Nearly all of it improves without surgery; the rest has excellent minimally invasive options.',
     title: 'Lumbar spine',
     overview: 'The lower back. The most common source of pain we see.',
     items: [
@@ -117,6 +130,8 @@ export const conditionGroups = [
   },
   {
     id: 'thoracic',
+    slug: 'thoracic-spine',
+    intro: 'The mid back is protected by the rib cage, so problems here are uncommon. When they involve the spinal cord they need expert attention.',
     title: 'Thoracic spine',
     overview: 'The mid back, between the neck and the lower back.',
     items: [{ slug: 'thoracic-stenosis-myelopathy', title: 'Thoracic stenosis and myelopathy', kind: 'Cord compression' }],
@@ -152,8 +167,9 @@ export const education = [
 export const boards = ['American Board of Orthopaedic Surgery'];
 
 export const awards = [
-  { title: 'Los Angeles Top Doctors', year: '2021' },
+  { title: 'Newsweek, 150 Best Spine Surgeons in America', year: '2024' },
   { title: 'Los Angeles Top Doctors', year: '2022' },
+  { title: 'Los Angeles Top Doctors', year: '2021' },
 ];
 
 export const appointments = [
@@ -248,6 +264,7 @@ export const nav: { label: string; href: string; mega?: 'services' | 'conditions
   { label: 'Conditions', href: '/conditions', mega: 'conditions' },
   { label: 'Testimonials', href: '/#testimonials' },
   { label: 'Blog', href: '/blog' },
+  { label: 'News', href: '/press' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -260,6 +277,7 @@ export const homeSections = [
   { id: 'why', label: 'Why us' },
   { id: 'legacy', label: 'Legacy' },
   { id: 'gallery', label: 'Gallery' },
+  { id: 'press', label: 'News' },
   { id: 'testimonials', label: 'Patients' },
   { id: 'blog', label: 'Blog' },
   { id: 'contact', label: 'Contact' },

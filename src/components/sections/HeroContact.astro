@@ -1,0 +1,32 @@
+---
+/**
+ * Location, phone, email and hours. Dropped into the hero slot of inner pages.
+ */
+import Icon from '@components/ui/Icon.astro';
+import { site } from '@data/site';
+---
+
+  <!-- Location and contact details, shown in the banner of every condition page -->
+  <ul class="mt-10 grid gap-x-10 gap-y-5 border-t border-white/15 pt-8 text-[0.95rem] text-white/75 sm:grid-cols-2">
+    <li class="flex items-start gap-3">
+      <Icon name="pin" class="mt-0.5 h-5 w-5 shrink-0 text-gold-light" />
+      <a href={site.address.mapsUrl} target="_blank" rel="noopener" class="link-underline leading-snug transition-colors hover:text-white">
+        {site.address.line1}<br />{site.address.line2}
+      </a>
+    </li>
+    <li class="flex items-start gap-3">
+      <Icon name="phone" class="mt-0.5 h-5 w-5 shrink-0 text-gold-light" />
+      <span class="leading-snug">
+        <a href={site.phoneHref} class="link-underline transition-colors hover:text-white">{site.phone}</a>
+        <br /><span class="text-white/50">Fax {site.fax}</span>
+      </span>
+    </li>
+    <li class="flex items-start gap-3">
+      <Icon name="mail" class="mt-0.5 h-5 w-5 shrink-0 text-gold-light" />
+      <a href={`mailto:${site.email}`} class="link-underline break-all leading-snug transition-colors hover:text-white">{site.email}</a>
+    </li>
+    <li class="flex items-start gap-3">
+      <Icon name="clock" class="mt-0.5 h-5 w-5 shrink-0 text-gold-light" />
+      <span class="leading-snug">{site.hours}</span>
+    </li>
+  </ul>

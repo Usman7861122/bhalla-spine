@@ -1,0 +1,35 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import Container from '@components/ui/Container.astro';
+import { site, images } from '@data/site';
+---
+
+<PageLayout title="Privacy policy" eyebrow="Privacy" lede="How this website handles your information." image={images.stenosis} imageAlt="" position="center">
+  <section class="section-y">
+    <Container>
+      <div class="mx-auto max-w-2xl space-y-6 text-lg leading-relaxed text-slate">
+        <h2 class="display text-2xl text-ink">What we collect</h2>
+        <p>
+          This website does not ask you to create an account. If you contact the clinic by phone or email, we
+          only use what you share to answer you and to schedule care.
+        </p>
+        <h2 class="display text-2xl text-ink">Cookies</h2>
+        <p>
+          We may use a small number of cookies to understand how the site is used and to play embedded video.
+          You can accept or decline in the notice at the bottom of the page. Your choice is saved in your own
+          browser, and you can clear it at any time in your browser settings.
+        </p>
+        <h2 class="display text-2xl text-ink">Medical information</h2>
+        <p>
+          Please do not send private medical details through this website or by regular email. Call the office
+          and we will guide you to a safe way to share them.
+        </p>
+        <h2 class="display text-2xl text-ink">Questions</h2>
+        <p>
+          Contact us at <a class="link-underline text-ink" href={`mailto:${site.email}`}>{site.email}</a> or
+          <a class="link-underline text-ink" href={site.phoneHref}>{site.phone}</a>.
+        </p>
+      </div>
+    </Container>
+  </section>
+</PageLayout>

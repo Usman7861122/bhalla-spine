@@ -6,6 +6,9 @@ import Icon from '@components/ui/Icon.astro';
 import Reveal from '@components/react/Reveal';
 import ScrollTimeline from '@components/react/ScrollTimeline';
 import ServicesGrid from '@components/sections/ServicesGrid.astro';
+import HeroContact from '@components/sections/HeroContact.astro';
+import InTheNews from '@components/sections/InTheNews.astro';
+import { pressForService } from '@data/press';
 import { services, site, images } from '@data/site';
 
 export function getStaticPaths() {
@@ -14,8 +17,8 @@ export function getStaticPaths() {
 
 const { service } = Astro.props;
 const c = service.content;
+const news = pressForService(service.slug);
 const heroImage = c?.photos[0] ?? images.consultWindow;
-const others = services.filter((s) => s.slug !== service.slug);
 ---
 
 <PageLayout
@@ -26,6 +29,7 @@ const others = services.filter((s) => s.slug !== service.slug);
   imageAlt=""
   position="center 35%"
 >
+  <HeroContact slot="hero" />
   {c ? (
     <>
       <!-- 1. What is it: text + illustration -->
@@ -162,6 +166,9 @@ const others = services.filter((s) => s.slug !== service.slug);
       </Container>
     </section>
   )}
+
+  <!-- In the news (only when there is coverage) -->
+  <InTheNews items={news} />
 
   <!-- Other services -->
   <ServicesGrid eyebrow="Other services" title="More ways we treat the neck and back." lede="" exclude={service.slug} />

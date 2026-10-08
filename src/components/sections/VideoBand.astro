@@ -1,0 +1,102 @@
+---
+/**
+ * Dark video section with a click to play poster.
+ * Nothing from Facebook loads until the visitor presses play, which keeps the page fast
+ * and avoids third party cookies for people who never watch.
+ *
+ * Works with a Facebook video URL (embedded through Facebook's player) or a self hosted MP4.
+ */
+import Container from '@components/ui/Container.astro';
+import Reveal from '@components/react/Reveal';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  text?: string;
+  /** Facebook video page URL, e.g. https://www.facebook.com/watch/?v=123 */
+  facebookUrl?: string;
+  /** Or a self hosted video file in /public, e.g. /videos/meet-dr-bhalla.mp4 */
+  src?: string;
+  poster: string;
+  posterAlt?: string;
+  /** Shown under the player. */
+  caption?: string;
+}
+const { eyebrow = 'Watch', title, text, facebookUrl, src, poster, posterAlt = '', caption } = Astro.props;
+
+const embedSrc = facebookUrl
+  ? `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(facebookUrl)}&show_text=false&autoplay=true&mute=false&width=1280`
+  : undefined;
+---
+
+<section id="video" data-dark class="section-y bg-ink text-white">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
+      <Reveal client:visible className="lg:col-span-4">
+        <p class="eyebrow gold-rule text-gold-light">{eyebrow}</p>
+        <h2 class="display mt-5 text-display-md">{title}</h2>
+        {text && <p class="mt-6 text-lg leading-relaxed text-white/75">{text}</p>}
+      </Reveal>
+
+      <Reveal client:visible delay={0.1} className="lg:col-span-8">
+        <figure>
+          <div
+            class="video-frame group relative aspect-video overflow-hidden rounded-sm bg-ink-soft"
+            data-embed={embedSrc}
+            data-src={src}
+          >
+            <img src={poster} alt={posterAlt} loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-[1.03]" />
+            <div aria-hidden="true" class="absolute inset-0 bg-ink/35 transition-colors duration-500 group-hover:bg-ink/20"></div>
+            <button
+              type="button"
+              class="video-play absolute inset-0 flex items-center justify-center"
+              aria-label="Play video"
+            >
+              <span class="flex h-20 w-20 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:border-gold-light group-hover:bg-gold-light/20">
+                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor" /></svg>
+              </span>
+            </button>
+          </div>
+          {caption && <figcaption class="mt-4 text-[0.85rem] leading-relaxed text-white/50">{caption}</figcaption>}
+        </figure>
+      </Reveal>
+    </div>
+  </Container>
+</section>
+
+<script>
+  function initVideo() {
+    document.querySelectorAll<HTMLElement>('.video-frame').forEach((frame) => {
+      const btn = frame.querySelector<HTMLButtonElement>('.video-play');
+      if (!btn || frame.dataset.ready) return;
+      frame.dataset.ready = '1';
+      btn.addEventListener('click', () => {
+        const embed = frame.dataset.embed;
+        const src = frame.dataset.src;
+        let player: HTMLElement;
+        if (src) {
+          const v = document.createElement('video');
+          v.src = src;
+          v.controls = true;
+          v.autoplay = true;
+          v.playsInline = true;
+          v.className = 'absolute inset-0 h-full w-full bg-black';
+          player = v;
+        } else if (embed) {
+          const f = document.createElement('iframe');
+          f.src = embed;
+          f.allow = 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share';
+          f.allowFullscreen = true;
+          f.title = 'Video';
+          f.className = 'absolute inset-0 h-full w-full border-0 bg-black';
+          player = f;
+        } else {
+          return;
+        }
+        frame.replaceChildren(player);
+      });
+    });
+  }
+  initVideo();
+  document.addEventListener('astro:page-load', initVideo);
+</script>

@@ -53,6 +53,13 @@ const total = conditionGroups.reduce((n, g) => n + g.items.length, 0);
             <p class:list={['eyebrow gold-rule', dark ? 'text-gold-light' : 'text-gold']}>{g.items.length} {g.items.length === 1 ? 'entry' : 'entries'}</p>
             <h2 class:list={['display mt-4 text-display-md', dark ? 'text-white' : 'text-ink']}>{g.title}</h2>
             <p class:list={['mt-4 leading-relaxed', dark && 'text-white/70']}>{g.overview}</p>
+            <a
+              href={`/conditions/${g.slug}`}
+              class:list={['group mt-6 inline-flex items-center gap-2 text-sm font-medium', dark ? 'text-gold-light' : 'text-gold']}
+            >
+              Overview of {g.title.toLowerCase()}
+              <Icon name="arrow" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
           </div>
           <ul class:list={['divide-y border-y lg:col-span-8', dark ? 'divide-line-dark border-line-dark' : 'divide-line border-line']}>
             {g.items.map((c) => (

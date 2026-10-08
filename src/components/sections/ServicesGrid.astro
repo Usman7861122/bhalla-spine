@@ -14,14 +14,19 @@ interface Props {
   lede?: string;
   /** Slug to leave out (used on service detail pages). */
   exclude?: string;
+  /** Show only these slugs, in this order (used on condition pages). */
+  only?: string[];
 }
 const {
   eyebrow = 'Care services',
   title = 'Seven ways we treat the neck and back.',
   lede = 'Every plan starts with the least invasive option that will work. Surgery only when it is the right answer.',
   exclude,
+  only,
 } = Astro.props;
-const list = services.filter((s) => s.slug !== exclude);
+const list = only
+  ? only.map((slug) => services.find((s) => s.slug === slug)).filter((s): s is (typeof services)[number] => Boolean(s))
+  : services.filter((s) => s.slug !== exclude);
 ---
 
 <section id="services" class="section-y bg-bone/60">

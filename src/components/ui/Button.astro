@@ -5,9 +5,13 @@ interface Props {
   size?: 'md' | 'lg';
   class?: string;
   type?: 'button' | 'submit';
+  /** Open in a new tab (adds rel="noopener"). */
+  external?: boolean;
+  /** Any other attribute (data-*, aria-*) is passed through. */
+  [key: string]: unknown;
 }
 
-const { href, variant = 'dark', size = 'md', class: className = '', type = 'button' } = Astro.props;
+const { href, variant = 'dark', size = 'md', class: className = '', type = 'button', external = false, ...rest } = Astro.props;
 
 const base =
   'hover-lift inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-colors duration-300 focus-visible:outline-gold';
@@ -23,7 +27,7 @@ const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
 ---
 
 {href ? (
-  <a href={href} class={classes}><slot /></a>
+  <a href={href} class={classes} target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined} {...rest}><slot /></a>
 ) : (
-  <button type={type} class={classes}><slot /></button>
+  <button type={type} class={classes} {...rest}><slot /></button>
 )}

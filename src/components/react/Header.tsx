@@ -101,7 +101,7 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-7 xl:gap-9" aria-label="Main">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main">
           {nav.map((item) =>
             item.mega ? (
               <div
@@ -146,7 +146,7 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
         <div className="hidden lg:flex shrink-0 items-center gap-6">
           <a
             href={site.phoneHref}
-            className={cn('hidden xl:block whitespace-nowrap text-[0.9rem] font-medium transition-colors', mutedColor)}
+            className={cn('hidden 2xl:block whitespace-nowrap text-[0.9rem] font-medium transition-colors', mutedColor)}
           >
             {site.phone}
           </a>
@@ -238,7 +238,9 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
                       <div className="pb-4 space-y-5">
                         {conditionGroups.map((g) => (
                           <div key={g.title}>
-                            <p className="eyebrow text-gold">{g.title}</p>
+                            <a href={`/conditions/${g.slug}`} className="eyebrow inline-block text-gold">
+                              {g.title}
+                            </a>
                             <ul className="mt-1">
                               {g.items.map((c) => (
                                 <li key={c.slug}>
@@ -369,7 +371,9 @@ function ConditionsMega() {
           >
             {col.map((g) => (
               <div key={g.title}>
-                <p className="eyebrow text-gold">{g.title}</p>
+                <a href={`/conditions/${g.slug}`} className="eyebrow link-underline inline-block text-gold hover:text-ink">
+                  {g.title}
+                </a>
                 <ul className="mt-3 space-y-1">
                   {g.items.map((c) => (
                     <li key={c.slug}>
