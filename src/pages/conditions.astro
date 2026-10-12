@@ -94,7 +94,7 @@ const total = conditionGroups.reduce((n, g) => n + g.items.length, 0);
         <p class="display mt-3 max-w-xl text-display-sm text-ink">Describe the pain. We will help you name it.</p>
       </div>
       <div class="flex flex-wrap gap-3">
-        <Button href="/contact">Book a consultation</Button>
+        <Button href={site.bookingUrl} external>Book a consultation</Button>
         <Button href={site.phoneHref} variant="outline">{site.phone}</Button>
       </div>
     </Container>

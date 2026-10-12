@@ -14,10 +14,61 @@ interface Props {
   transparentHeader?: boolean;
   /** Transparent header with dark text over a light hero (home page). */
   lightHero?: boolean;
+  /** Keep this page out of search results (used by the 404 page). */
+  noindex?: boolean;
 }
 
-const { title, description = site.description, transparentHeader = false, lightHero = false } = Astro.props;
+const { title, description = site.description, transparentHeader = false, lightHero = false, noindex = false } = Astro.props;
 const headerMode = lightHero ? 'light' : transparentHeader ? 'transparent' : 'solid';
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const origin = 'https://bhallaspine.com';
+const address = {
+  '@type': 'PostalAddress',
+  streetAddress: '3610 Long Beach Blvd, Suite 202',
+  addressLocality: 'Long Beach',
+  addressRegion: 'CA',
+  postalCode: '90807',
+  addressCountry: 'US',
+};
+const openingHoursSpecification = {
+  '@type': 'OpeningHoursSpecification',
+  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+  opens: '08:00',
+  closes: '17:00',
+};
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['MedicalClinic', 'LocalBusiness'],
+      '@id': `${origin}/#clinic`,
+      name: 'Amandeep Bhalla, MD | Orthopedic Spine Surgeon',
+      url: origin,
+      telephone: '+1-562-427-8119',
+      email: site.email,
+      image: `${origin}/images/C1A3704-scaled-e1747239020857.jpg`,
+      medicalSpecialty: 'Orthopedic',
+      address,
+      areaServed: { '@type': 'City', name: 'Long Beach' },
+      openingHoursSpecification,
+      parentOrganization: { '@type': 'Organization', name: 'Commons Clinic', url: 'https://commonsclinic.com/' },
+      employee: { '@id': `${origin}/#physician` },
+    },
+    {
+      '@type': 'Physician',
+      '@id': `${origin}/#physician`,
+      name: 'Dr. Amandeep Bhalla',
+      url: origin,
+      telephone: '+1-562-427-8119',
+      medicalSpecialty: 'Orthopedic',
+      description: site.description,
+      image: `${origin}/images/C1A3704-scaled-e1747239020857.jpg`,
+      address,
+      openingHoursSpecification,
+      worksFor: { '@id': `${origin}/#clinic` },
+    },
+  ],
+};
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | Orthopedic Spine Surgeon, Long Beach`;
 ---
 
@@ -30,11 +81,14 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | Orthopedic
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <ClientRouter />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"

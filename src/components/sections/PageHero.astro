@@ -13,7 +13,9 @@ interface Props {
   position?: string;
 }
 
-const { title, eyebrow, lede, image, imageAlt = '', position = 'center 30%' } = Astro.props;
+const { title, eyebrow, lede, image, imageAlt: imageAltProp = '', position = 'center 30%' } = Astro.props;
+/* Never leave the hero photo without a description. */
+const imageAlt = imageAltProp || `${title}: Dr. Bhalla, orthopedic spine surgeon in Long Beach`;
 ---
 
 <section data-dark class="relative isolate overflow-hidden bg-ink text-white">

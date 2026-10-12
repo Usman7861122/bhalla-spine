@@ -1,7 +1,7 @@
 ---
 /** The "legacy of care" pinned-photo band, preset so any page can drop it in. */
 import ParallaxBand from '@components/sections/ParallaxBand.astro';
-import { images } from '@data/site';
+import { images, site } from '@data/site';
 ---
 
 <ParallaxBand
@@ -10,7 +10,7 @@ import { images } from '@data/site';
   eyebrow="A legacy of care"
   title="Serving Long Beach, as his father did before him."
   text="Two generations of physicians, one commitment: treat every patient the way we would want our own family treated."
-  cta={{ label: 'Book a consultation', href: '/contact' }}
+  cta={{ label: 'Book a consultation', href: site.bookingUrl, external: true }}
   stats={[
     { value: '2x', label: 'LA Top Doctors, 2021 and 2022' },
     { value: 'Harvard', label: 'Spine fellowship, MGH and Brigham' },

@@ -13,7 +13,7 @@ interface Props {
   eyebrow: string;
   title: string;
   text?: string;
-  cta?: { label: string; href: string };
+  cta?: { label: string; href: string; external?: boolean };
   stats?: { value: string; label: string }[];
   position?: string;
 }
@@ -24,10 +24,9 @@ const { src, alt, eyebrow, title, text, cta, stats = [], position = 'center 40%'
 <section id="legacy" data-dark class="band relative isolate min-h-[85vh] text-white">
   <!-- Fixed photo, clipped to the section -->
   <div class="band-bg" aria-hidden="true">
-    <img src={src} alt="" loading="lazy" decoding="async" style={`object-position:${position}`} />
+    <img src={src} alt={alt} loading="lazy" decoding="async" style={`object-position:${position}`} />
     <div class="band-veil"></div>
   </div>
-  <span class="sr-only">{alt}</span>
 
   <div class="container-x relative flex min-h-[85vh] flex-col justify-end py-20 md:py-28">
     <div class="max-w-2xl">
@@ -36,7 +35,7 @@ const { src, alt, eyebrow, title, text, cta, stats = [], position = 'center 40%'
       {text && <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{text}</p>}
       {cta && (
         <div class="mt-9">
-          <Button href={cta.href} variant="light" size="lg">{cta.label}</Button>
+          <Button href={cta.href} external={cta.external} variant="light" size="lg">{cta.label}</Button>
         </div>
       )}
     </div>

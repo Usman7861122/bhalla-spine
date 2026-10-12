@@ -141,7 +141,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'In most cases, yes, and it is one of the most effective treatments. Start with walking and gentle stretching, then build strength with guidance from a physical therapist. Stop and get advice if exercise causes new numbness or weakness.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'motion-preservation-surgery', 'outpatient-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'motion-preservation-surgery'],
   },
   'degenerative-disc-disease': {
     photos: [
@@ -245,7 +245,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'For the right patient, yes. Disc replacement removes a single painful disc and replaces it with an implant that keeps the spine moving. Dr. Bhalla will tell you plainly whether your disc, alignment and bone quality make you a good candidate.',
       },
     ],
-    relatedServices: ['lumbar-disc-replacement', 'cervical-disc-replacement', 'motion-preservation-surgery'],
+    relatedServices: ['non-surgical-care', 'lumbar-disc-replacement', 'cervical-disc-replacement'],
   },
 
   'spinal-infections': {
@@ -346,7 +346,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'It can if treatment is cut short or the original source is not addressed. Completing the full course and attending follow up visits makes recurrence uncommon.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'revision-spinal-surgery', 'outpatient-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'revision-spinal-surgery'],
   },
 
   'spinal-tumors': {
@@ -448,7 +448,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'If you have a known cancer and new back pain, within days. If you have weakness, numbness or bladder changes, the same day. Early treatment gives the best chance of protecting the nerves.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'revision-spinal-surgery', 'outpatient-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'revision-spinal-surgery'],
   },
 
   'sacroiliac-joint-dysfunction': {
@@ -553,7 +553,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'The procedure is minimally invasive, usually outpatient or one night in hospital. Most people walk the same day with a walker or crutches, ease off them over a few weeks, and return to full activity within about three months as the joint fuses.',
       },
     ],
-    relatedServices: ['sacroiliac-joint-fusion', 'minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'sacroiliac-joint-fusion', 'minimally-invasive-spinal-surgery'],
   },
   scoliosis: {
     photos: [`${dir}/scoliosis/1.jpg`, `${dir}/scoliosis/2.jpg`, `${dir}/scoliosis/3.jpg`],
@@ -653,7 +653,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Often, yes. Many adults are helped by therapy, injections and, when nerve pain is the main problem, a smaller decompression. A full correction is reserved for curves that are causing real disability.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'revision-spinal-surgery', 'motion-preservation-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'revision-spinal-surgery'],
   },
 
   kyphosis: {
@@ -754,7 +754,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Usually it is postural kyphosis, which is flexible and harmless. If the round back does not correct when they stand tall, or there is pain, an examination and X ray can tell postural kyphosis apart from Scheuermann\'s, which may benefit from bracing during growth.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'revision-spinal-surgery', 'outpatient-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'revision-spinal-surgery'],
   },
 
   flatback: {
@@ -855,7 +855,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'For patients who cannot stand upright or walk comfortably despite good non surgical care, restoring alignment often returns the ability to stand, walk and look ahead without constant effort. Dr. Bhalla will give you an honest view of the likely benefit and the risks in your specific case.',
       },
     ],
-    relatedServices: ['revision-spinal-surgery', 'minimally-invasive-spinal-surgery', 'motion-preservation-surgery'],
+    relatedServices: ['non-surgical-care', 'revision-spinal-surgery', 'minimally-invasive-spinal-surgery'],
   },
   /* ---------------------------------------------------------------- thoracic */
   'thoracic-stenosis-myelopathy': {
@@ -956,7 +956,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'If you have narrowing without any cord symptoms, watching is reasonable. Once myelopathy is present, waiting risks permanent loss of function. Dr. Bhalla will tell you clearly which situation you are in.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'revision-spinal-surgery', 'outpatient-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'revision-spinal-surgery'],
   },
 
   /* ---------------------------------------------------------------- cervical */
@@ -1058,7 +1058,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Arm pain usually eases within days. Most patients go home the same day, return to desk work within one to two weeks and to full activity within six to twelve weeks.',
       },
     ],
-    relatedServices: ['cervical-disc-replacement', 'motion-preservation-surgery', 'outpatient-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'cervical-fusion', 'cervical-disc-replacement'],
   },
 
   'cervical-radiculopathy': {
@@ -1159,7 +1159,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Pain usually eases quickly. Numbness and weakness recover more slowly as the nerve heals, and a nerve that has been compressed for a long time may not recover completely, which is one reason not to delay treatment when weakness is present.',
       },
     ],
-    relatedServices: ['cervical-disc-replacement', 'minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'cervical-disc-replacement', 'minimally-invasive-spinal-surgery'],
   },
 
   'cervical-myelopathy': {
@@ -1260,7 +1260,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Most patients are home within a day or two. Walking begins immediately. Hand function and balance improve over weeks to months, with therapy to support the recovery.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'cervical-disc-replacement', 'revision-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'cervical-fusion', 'minimally-invasive-spinal-surgery'],
   },
 
   'cervical-trauma': {
@@ -1361,120 +1361,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Often, yes, once the injury has healed and strength and motion are restored. Return to contact sport after a fracture or fusion is decided case by case, and Dr. Bhalla will give you a clear answer for your situation.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'revision-spinal-surgery', 'outpatient-spinal-surgery'],
-  },
-
-  'cervical-fusion': {
-    photos: [`${dir}/cervical-fusion/1.jpg`, `${dir}/cervical-fusion/2.jpg`, `${dir}/cervical-fusion/3.jpg`],
-    intro:
-      'Cervical fusion joins two or more neck vertebrae into one solid bone. It is one of the most reliable operations in spine surgery for relieving nerve and cord pressure and restoring stability.',
-    labels: {
-      causes: 'When it is used',
-      symptoms: 'Is it right for you',
-      symptomList: 'Signs fusion may help',
-      diagnosis: 'The procedure',
-      treatment: 'Your options',
-      nonSurgical: 'Alternatives to consider first',
-      nonSurgicalTitle: 'When fusion is not the only answer',
-      surgical: 'Types of fusion',
-      surgicalTitle: 'Matched to your anatomy',
-      livingWell: 'Recovery',
-    },
-    overview: {
-      title: 'What is cervical fusion?',
-      text: [
-        'In a cervical fusion, Dr. Bhalla removes the damaged disc or bone that is pressing on the nerves or spinal cord, then places a spacer filled with bone graft in its place and secures the vertebrae with a small plate and screws. Over the following months the vertebrae grow together into one solid segment. The most common version is anterior cervical discectomy and fusion (ACDF), performed through a small incision at the front of the neck.',
-        'Fusion is sometimes seen as old fashioned next to disc replacement, but it remains the right choice in many situations: when the spine is unstable, when there is significant arthritis or deformity, when several levels are involved, or when bone quality or alignment make an artificial disc unsuitable. Dr. Bhalla offers both and recommends fusion when it is the operation most likely to give you a lasting result.',
-      ],
-    },
-    causes: {
-      title: 'Conditions treated with fusion',
-      text: 'Fusion addresses pressure on the nerves and cord and, unlike other procedures, also restores stability.',
-      items: [
-        { title: 'Cervical myelopathy', text: 'Compression of the spinal cord, especially across several levels or with poor alignment.' },
-        { title: 'Radiculopathy that has not improved', text: 'A pinched nerve from a disc or bone spur when disc replacement is not suitable.' },
-        { title: 'Instability and spondylolisthesis', text: 'Vertebrae that move too much or have slipped, which an artificial disc cannot control.' },
-        { title: 'Fractures and dislocations', text: 'Traumatic injuries that need rigid stabilization to heal and protect the cord.' },
-        { title: 'Deformity', text: 'Kyphosis of the neck that needs to be corrected and held in position.' },
-        { title: 'Revision of previous surgery', text: 'A failed disc replacement or a non union from an earlier fusion.' },
-      ],
-    },
-    symptoms: {
-      title: 'Who is a candidate?',
-      text: 'Fusion is considered when symptoms are clearly caused by a problem that fusion can fix, and when conservative treatment has had a fair chance.',
-      items: [
-        'Arm pain, numbness or weakness from a pinched nerve that has not improved',
-        'Hand clumsiness, balance problems or leg symptoms from cord compression',
-        'Neck pain from instability confirmed on imaging',
-        'A fracture or dislocation that needs stabilization',
-        'Previous neck surgery that has not healed or has failed',
-        'Anatomy or bone quality that rules out disc replacement',
-      ],
-      redFlags: [
-        'Rapidly progressing weakness or clumsiness',
-        'Loss of bladder or bowel control',
-        'Cord compression with signal change on MRI',
-        'An unstable injury after trauma',
-      ],
-    },
-    diagnosis: {
-      title: 'What happens during surgery',
-      text: 'ACDF is a well established procedure that typically takes one to two hours per level and is performed through a small incision in a skin crease at the front of the neck.',
-      steps: [
-        { label: 'Access', title: 'A small incision at the front', text: 'Dr. Bhalla reaches the spine between the muscles and vessels of the neck without cutting muscle, which is why recovery is quick.' },
-        { label: 'Decompress', title: 'Remove the disc and bone spurs', text: 'Under the microscope, the damaged disc and any bone pressing on the nerves or cord are removed.' },
-        { label: 'Restore', title: 'Place the spacer', text: 'A spacer filled with bone graft restores the disc height and opens the nerve openings.' },
-        { label: 'Secure', title: 'Plate and screws', text: 'A low profile titanium plate holds everything in place while the bone fuses over the following months.' },
-      ],
-    },
-    treatment: {
-      title: 'Fusion compared with the alternatives',
-      text: 'Fusion is one of several ways to treat the same problems. Dr. Bhalla will explain why he recommends one over another for you.',
-      nonSurgical: [
-        'Physical therapy, medication and injections are always tried first for nerve pain',
-        'Observation for mild, stable myelopathy',
-        'Posterior foraminotomy for a single pinched nerve without instability',
-        'Cervical disc replacement when motion can be safely preserved',
-        'Laminoplasty for multi level cord compression with good alignment',
-      ],
-      surgical: [
-        'ACDF: the gold standard for one or two level disease with instability or arthritis',
-        'Multi level ACDF or corpectomy for extensive cord compression',
-        'Posterior fusion for trauma, deformity or when the front approach is not suitable',
-        'Hybrid surgery: fusion at one level and disc replacement at another',
-      ],
-    },
-    livingWell: {
-      title: 'Recovery after cervical fusion',
-      text: 'Most patients are surprised by how quickly they feel better. Arm pain often eases immediately; the fusion itself matures over several months.',
-      tips: [
-        'Home the same day or the next morning in most cases.',
-        'Walk from day one. A soft collar may be used for comfort for a short period.',
-        'Expect a sore throat and mild swallowing discomfort for a week or so.',
-        'Desk work within one to two weeks, driving once you are off strong pain medication.',
-        'No heavy lifting or neck extremes for about six weeks while the fusion takes.',
-        'Follow up X rays at intervals confirm the bone has fused, usually by three to six months.',
-      ],
-    },
-    faqs: [
-      {
-        q: 'Will I lose movement in my neck?',
-        a: 'A single level fusion removes only a few degrees of motion, which most people never notice. Multi level fusions reduce motion more. This is one reason Dr. Bhalla recommends disc replacement when it is a safe option.',
-      },
-      {
-        q: 'Will the levels next to the fusion wear out?',
-        a: 'Adjacent levels carry slightly more load after a fusion, and some patients develop problems there years later. The risk is modest and is lower with good alignment. Disc replacement is designed to reduce it further for suitable patients.',
-      },
-      {
-        q: 'Is fusion safe?',
-        a: 'ACDF has a long track record and a low complication rate. Risks include infection, swallowing difficulty, hoarseness, non union and, rarely, nerve injury. Dr. Bhalla will go through these with you in detail.',
-      },
-      {
-        q: 'How do I know the fusion has worked?',
-        a: 'Relief of arm or cord symptoms is usually clear within weeks. The bone fusion itself is confirmed on follow up X rays or CT over three to twelve months.',
-      },
-    ],
-    relatedServices: ['cervical-disc-replacement', 'motion-preservation-surgery', 'revision-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'revision-spinal-surgery'],
   },
 
   /* ---------------------------------------------------------------- lumbar */
@@ -1576,7 +1463,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Recurrence happens in roughly five to ten percent of cases, most often in the first few months. Avoiding heavy lifting and bending early on, and building core strength, reduces the risk.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery', 'lumbar-disc-replacement'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery'],
   },
 
   'lumbar-radiculopathy': {
@@ -1677,7 +1564,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Only a small minority of people with sciatica need surgery. It is recommended for persistent, disabling leg pain after a fair trial of conservative care, for progressive weakness, or urgently for bladder or bowel symptoms.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery', 'motion-preservation-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery'],
   },
 
   'lumbar-stenosis': {
@@ -1778,7 +1665,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Not usually. Fusion is added only when a vertebra has slipped or the spine is unstable. Most stenosis is treated with decompression alone, which preserves motion.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery', 'motion-preservation-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery'],
   },
 
   'lumbar-trauma': {
@@ -1879,7 +1766,7 @@ export const conditionContent: Record<string, ConditionContent> = {
         a: 'Most people return to full activity after a lumbar injury, including after surgery. The timeline depends on the injury and your work. Dr. Bhalla will give you a realistic plan and milestones.',
       },
     ],
-    relatedServices: ['minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery', 'revision-spinal-surgery'],
+    relatedServices: ['non-surgical-care', 'minimally-invasive-spinal-surgery', 'outpatient-spinal-surgery'],
   },
 };
 

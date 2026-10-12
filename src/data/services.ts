@@ -1,5 +1,5 @@
 /**
- * The seven care services. Each has a short card blurb and full page content.
+ * The care services, starting with non-surgical care. Each has a short card blurb and full page content.
  *
  * Images: `image` is the card / hero photo, `content.photos` = [hero, overview, candidates].
  * Stock photos are from Unsplash (license allows commercial use, no attribution required),
@@ -54,6 +54,75 @@ const img = {
 };
 
 export const services: Service[] = [
+  /* 0 ------------------------------------------------------------------ */
+  {
+    slug: 'non-surgical-care',
+    title: 'Non-Surgical Care',
+    short: 'Evaluation, physical therapy, medication and targeted treatment first. Surgery only when it is truly the answer.',
+    description:
+      'Most neck and back pain improves without an operation. Dr. Bhalla starts with a careful evaluation, builds a plan around physical therapy, medication and targeted injections, and recommends surgery only when it is clearly the better choice.',
+    image: img.consultSeated,
+    content: {
+      photos: [img.consultSeated, img.spineModel, img.handshake],
+      intro:
+        'Most neck and back pain gets better without an operation. Dr. Bhalla starts with a careful evaluation, builds a plan around physical therapy, medication and targeted treatment, and recommends surgery only when it is clearly the better choice.',
+      whatIs: {
+        title: 'What is non-surgical spine care?',
+        text: [
+          'Non-surgical, or conservative, care means treating the source of your pain without an operation. It begins with understanding what is actually causing your symptoms: your history, a physical exam and, when needed, X-rays or an MRI. Many patients are relieved to learn that a scan can look worse than they feel, and that a clear plan can get them moving again.',
+          'Your plan may include physical therapy, anti-inflammatory medication, changes to activity and, when appropriate, image-guided injections to calm an irritated nerve or joint. Dr. Bhalla is a surgeon, and that is why this matters: he will tell you plainly when surgery will not help, and when it might.',
+        ],
+      },
+      candidates: {
+        title: 'Who is it for?',
+        text: 'Nearly everyone with new neck pain, back pain, sciatica or arm pain should start here. The exceptions are the warning signs described below, which need prompt attention.',
+        conditions: [
+          'Neck and back pain',
+          'Herniated discs',
+          'Sciatica and pinched nerves',
+          'Spinal stenosis',
+          'Degenerative disc disease',
+          'Sacroiliac joint pain',
+        ],
+        symptoms: [
+          'Pain that comes and goes',
+          'Pain after a lift, a twist or a long day',
+          'Numbness or tingling that is not getting worse',
+          'Stiffness and reduced movement',
+        ],
+      },
+      benefits: {
+        title: 'Why start here?',
+        text: 'Conservative care is safe, works for most people and keeps every option open.',
+        items: [
+          { title: 'No operation', text: 'Most people improve with time, therapy and the right guidance.' },
+          { title: 'Lower risk', text: 'It avoids the risks of anesthesia and surgery when they are not needed.' },
+          { title: 'Clear answers', text: 'A careful evaluation shows what is, and is not, causing your pain.' },
+          { title: 'Surgery stays an option', text: 'If you do need an operation later, you will know it was the right call.' },
+        ],
+      },
+      recovery: {
+        title: 'What does a typical plan look like?',
+        text: 'Every plan is different, but most people follow a path like this.',
+        steps: [
+          { label: 'First visit', title: 'Evaluation and a clear plan', text: 'History, exam and imaging if needed. You leave knowing what is going on and what comes next.' },
+          { label: 'Weeks one to six', title: 'Therapy and symptom relief', text: 'Physical therapy, medication and activity changes. An injection may be added to calm a nerve or a joint.' },
+          { label: 'Weeks six to twelve', title: 'Review and decide', text: 'We check your progress together. Most people are better. If you are not, we talk about the next step.' },
+        ],
+      },
+      safety: {
+        title: 'When surgery is, and is not, the answer',
+        text: 'Surgery is not the answer for most back and neck pain. It becomes worth discussing when pain or nerve symptoms continue despite a fair trial of treatment, when weakness is getting worse, or when imaging shows a problem that will not settle on its own. Get urgent care for loss of bladder or bowel control, rapidly worsening weakness, numbness in the groin or saddle area, or fever with severe spine pain.',
+      },
+      faqs: [
+        { q: 'Will I need surgery?', a: 'Most people do not. About nine in ten herniated discs improve within a few months, and many episodes of back pain settle with time and therapy. Dr. Bhalla recommends surgery only when it is the better option for you.' },
+        { q: 'How long should I try conservative care?', a: 'For most problems, six to twelve weeks is a fair trial. Weakness that is getting worse, or any of the warning signs above, should not wait.' },
+        { q: 'Do injections cure the problem?', a: 'No. Injections reduce inflammation and pain so you can move and take part in therapy. They do not repair the underlying problem, and they are not right for everyone.' },
+        { q: 'Can I see Dr. Bhalla if I do not want surgery?', a: 'Yes. Many patients come for an expert opinion and a non-surgical plan. A consultation does not commit you to anything.' },
+      ],
+    },
+  },
+
   /* 1 ------------------------------------------------------------------ */
   {
     slug: 'minimally-invasive-spinal-surgery',
@@ -243,6 +312,75 @@ export const services: Service[] = [
         { q: 'How long does the surgery take?', a: 'About one to two hours for one level.' },
         { q: 'Will I set off metal detectors?', a: 'Rarely. The implant is small. We provide a card describing it in case you are asked.' },
         { q: 'Can two levels be replaced at once?', a: 'Yes. Two level cervical disc replacement is approved and commonly performed when both discs are the source of symptoms.' },
+      ],
+    },
+  },
+
+  /* cervical fusion ---------------------------------------------------- */
+  {
+    slug: 'cervical-fusion',
+    title: 'Cervical Fusion',
+    short: 'A proven operation for nerve and spinal cord pressure when the neck needs stability.',
+    description:
+      'Cervical fusion joins two or more neck vertebrae into one solid bone. It is one of the most reliable operations in spine surgery for relieving nerve and cord pressure and restoring stability.',
+    image: '/images/condition-pages/cervical-fusion/1.jpg',
+    content: {
+      photos: ['/images/condition-pages/cervical-fusion/1.jpg', '/images/condition-pages/cervical-fusion/2.jpg', '/images/condition-pages/cervical-fusion/3.jpg'],
+      intro:
+        'Cervical fusion joins two or more neck vertebrae into one solid bone. It is one of the most reliable operations in spine surgery for relieving nerve and cord pressure and restoring stability.',
+      whatIs: {
+        title: 'What is cervical fusion?',
+        text: [
+          'In a cervical fusion, Dr. Bhalla removes the damaged disc or bone that is pressing on the nerves or spinal cord, then places a spacer filled with bone graft in its place and secures the vertebrae with a small plate and screws. Over the following months the vertebrae grow together into one solid segment. The most common version is anterior cervical discectomy and fusion (ACDF), performed through a small incision at the front of the neck.',
+          'Fusion is sometimes seen as old fashioned next to disc replacement, but it remains the right choice in many situations: when the spine is unstable, when there is significant arthritis or deformity, when several levels are involved, or when bone quality or alignment make an artificial disc unsuitable. Dr. Bhalla offers both and recommends fusion when it is the operation most likely to give you a lasting result.',
+        ],
+      },
+      candidates: {
+        title: 'Who is a candidate?',
+        text: 'Fusion is considered when symptoms are clearly caused by a problem that fusion can fix, and when conservative treatment has had a fair chance.',
+        conditions: [
+          'Cervical myelopathy (spinal cord compression)',
+          'Pinched nerves that have not improved',
+          'Instability and spondylolisthesis',
+          'Fractures and dislocations',
+          'Neck deformity',
+          'Revision of earlier neck surgery',
+        ],
+        symptoms: [
+          'Arm pain, numbness or weakness',
+          'Hand clumsiness or balance problems',
+          'Neck pain from instability',
+          'Symptoms after a neck injury',
+        ],
+      },
+      benefits: {
+        title: 'What are the benefits?',
+        text: 'Fusion treats the pressure on the nerves and, unlike some other procedures, also restores stability.',
+        items: [
+          { title: 'Lasting relief', text: 'Removing the pressure on a nerve or the cord often relieves arm pain quickly.' },
+          { title: 'Stability', text: 'The vertebrae heal into one solid segment that protects the nerves.' },
+          { title: 'Well established', text: 'ACDF has a long track record and a low complication rate.' },
+          { title: 'Small incision', text: 'It is done through a small cut in a skin crease at the front of the neck.' },
+        ],
+      },
+      recovery: {
+        title: 'Recovery after cervical fusion',
+        text: 'Most patients are surprised by how quickly they feel better. Arm pain often eases right away, and the fusion itself matures over several months.',
+        steps: [
+          { label: 'Same day', title: 'Home the same day or the next morning', text: 'You walk from day one. A soft collar may be used for comfort for a short time. Expect a sore throat for about a week.' },
+          { label: 'First two weeks', title: 'Back to light activity', text: 'Desk work within one to two weeks. Driving once you are off strong pain medication.' },
+          { label: 'Three to six months', title: 'The bone fuses', text: 'No heavy lifting or neck extremes for about six weeks. Follow up X-rays confirm the bone has fused.' },
+        ],
+      },
+      safety: {
+        title: 'Is it safe?',
+        text: 'ACDF has a long track record and a low complication rate. Risks include infection, swallowing difficulty, hoarseness, non-union and, rarely, nerve injury. Dr. Bhalla will go through these with you in detail, and will always discuss alternatives first, including physical therapy, injections and disc replacement.',
+      },
+      faqs: [
+        { q: 'Will I lose movement in my neck?', a: 'A single level fusion removes only a few degrees of motion, which most people never notice. Multi level fusions reduce motion more. This is one reason Dr. Bhalla recommends disc replacement when it is a safe option.' },
+        { q: 'Will the levels next to the fusion wear out?', a: 'Adjacent levels carry slightly more load after a fusion, and some patients develop problems there years later. The risk is modest and is lower with good alignment. Disc replacement is designed to reduce it further for suitable patients.' },
+        { q: 'Is fusion safe?', a: 'ACDF has a long track record and a low complication rate. Risks include infection, swallowing difficulty, hoarseness, non-union and, rarely, nerve injury.' },
+        { q: 'How do I know the fusion has worked?', a: 'Relief of arm or cord symptoms is usually clear within weeks. The bone fusion itself is confirmed on follow up X-rays or CT over three to twelve months.' },
       ],
     },
   },

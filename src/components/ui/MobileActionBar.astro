@@ -9,7 +9,7 @@ import { site } from '@data/site';
     <Icon name="phone" class="h-[1.05rem] w-[1.05rem]" />
     {site.phone}
   </a>
-  <a href="/contact" class="mbar-btn mbar-book">
+  <a href={site.bookingUrl} target="_blank" rel="noopener" class="mbar-btn mbar-book">
     <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.6" /></svg>
     Appointment
   </a>

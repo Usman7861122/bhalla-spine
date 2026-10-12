@@ -47,7 +47,7 @@ export const site = {
   role: 'Board-Certified, Fellowship-Trained Orthopedic Spine Surgeon',
   tagline: 'Get back to activities you enjoy',
   description:
-    'Dr. Amandeep Bhalla is a board-certified, fellowship-trained orthopedic spine surgeon in Long Beach, CA, specializing in minimally invasive, motion-preserving and robotic-assisted spine surgery.',
+    'Conservative care first. Dr. Amandeep Bhalla, a board-certified orthopedic spine surgeon in Long Beach, CA, recommends the least invasive surgery only when it is needed.',
   phone: '(562) 427-8119',
   phoneHref: 'tel:+15624278119',
   fax: '(562) 546-1227',
@@ -57,6 +57,10 @@ export const site = {
     line2: 'Long Beach, CA 90807',
     mapsUrl: 'https://maps.google.com/?q=3610+Long+Beach+Blvd+Suite+202+Long+Beach+CA+90807',
   },
+  /** Third party booking page used by every Book button. Opens in a new tab. */
+  bookingUrl: 'https://commonsclinic.com/booking-request/?providerId=501194',
+  /** Contact form endpoint (Lambda Function URL). Leave empty until it exists. */
+  contactApi: 'https://3ljdwvwr6sdu67xojgttllbwfa0xwktg.lambda-url.us-east-1.on.aws/',
   hours: 'Monday to Friday, 8:00 AM to 5:00 PM',
   /** Short video about Dr. Bhalla, opened in a pop up from the About section. */
   video: {
@@ -112,7 +116,6 @@ export const conditionGroups = [
       { slug: 'cervical-radiculopathy', title: 'Cervical radiculopathy', kind: 'Pinched nerve' },
       { slug: 'cervical-myelopathy', title: 'Cervical myelopathy', kind: 'Cord compression' },
       { slug: 'cervical-trauma', title: 'Cervical trauma', kind: 'Injury' },
-      { slug: 'cervical-fusion', title: 'Cervical fusion', kind: 'Procedure' },
     ],
   },
   {
@@ -183,8 +186,8 @@ export const whyChoose = [
     text: 'Board-certified and fellowship-trained at Harvard, with extensive experience treating complex spinal disorders. Leads the Spine Center at MemorialCare Long Beach.',
   },
   {
-    title: 'Advanced technology',
-    text: 'Minimally invasive, motion-preserving and robotic-assisted techniques that mean smaller incisions, less pain and a faster return to life.',
+    title: 'Conservative first, advanced when needed',
+    text: 'Therapy, medication and targeted treatment come first. When surgery is the answer, minimally invasive and motion-preserving techniques mean smaller incisions, less pain and a faster return to life.',
   },
   {
     title: 'Patient-centered care',

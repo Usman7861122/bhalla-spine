@@ -16,7 +16,9 @@ const quickLinks = nav.filter((n) => !n.mega);
       </div>
       <div class="flex flex-wrap gap-3">
         <a
-          href="/contact"
+          href={site.bookingUrl}
+          target="_blank"
+          rel="noopener"
           class="hover-lift inline-flex h-12 items-center rounded-full bg-white px-7 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
         >
           Book a consultation

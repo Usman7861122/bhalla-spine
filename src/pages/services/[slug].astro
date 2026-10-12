@@ -43,13 +43,13 @@ const local = c?.local ?? localFor(service.title, 'service');
             <h2 class="display mt-5 text-display-md text-ink">{c.whatIs.title}</h2>
             {c.whatIs.text.map((t) => <p class="mt-6 text-lg leading-relaxed">{t}</p>)}
             <div class="mt-10 flex flex-wrap gap-3">
-              <Button href="/contact">Book a consultation</Button>
+              <Button href={site.bookingUrl} external>Book a consultation</Button>
               <Button href={site.phoneHref} variant="outline">{site.phone}</Button>
             </div>
           </Reveal>
           <Reveal client:visible delay={0.1} className="lg:col-span-6">
             <div class="img-zoom aspect-[4/3] overflow-hidden rounded-sm bg-ink">
-              <img src={c.photos[1]} alt="" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+              <img src={c.photos[1]} alt={`${service.title}: patient care`} loading="lazy" decoding="async" class="h-full w-full object-cover" />
             </div>
           </Reveal>
         </Container>
@@ -60,7 +60,7 @@ const local = c?.local ?? localFor(service.title, 'service');
         <Container class="grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
           <Reveal client:visible className="order-last lg:order-first lg:col-span-5">
             <div class="img-zoom aspect-[4/5] overflow-hidden rounded-sm bg-ink-soft">
-              <img src={c.photos[2]} alt="" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+              <img src={c.photos[2]} alt={`${service.title}: recovery`} loading="lazy" decoding="async" class="h-full w-full object-cover" />
             </div>
           </Reveal>
           <Reveal client:visible delay={0.1} className="lg:col-span-7">
@@ -168,7 +168,7 @@ const local = c?.local ?? localFor(service.title, 'service');
     <section class="section-y">
       <Container class="max-w-3xl">
         <p class="text-lg leading-relaxed">Detailed content for {service.title} is coming soon.</p>
-        <div class="mt-10"><Button href="/contact">Book a consultation</Button></div>
+        <div class="mt-10"><Button href={site.bookingUrl} external>Book a consultation</Button></div>
       </Container>
     </section>
   )}

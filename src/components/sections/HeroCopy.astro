@@ -8,19 +8,21 @@ interface Props {
 }
 const { tone = 'dark' } = Astro.props;
 const light = tone === 'light';
+/* The hero text is rendered twice (desktop overlay and mobile card, one hidden by CSS). Only one real <h1> in the HTML. */
+const Tag = light ? 'p' : 'h1';
 const trained = ['UCLA', 'Harvard', 'Massachusetts General'];
 ---
 
 <p class:list={['eyebrow gold-rule', light ? 'text-gold-light' : 'text-gold']}>{site.role}</p>
-<h1 class:list={['display mt-5 text-[clamp(2.6rem,4.3vw,4.1rem)] leading-[1.02]', light ? 'text-white' : 'text-ink']}>
-  Get back to <em class:list={['font-light italic', light ? 'text-gold-light' : 'text-gold']}>activities</em> you enjoy.
-</h1>
+<Tag {...(light ? { role: 'heading', 'aria-level': 1 } : {})} class:list={['display mt-5 text-[clamp(2.6rem,4.3vw,4.1rem)] leading-[1.02]', light ? 'text-white' : 'text-ink']}>
+  Conservative care <em class:list={['font-light italic', light ? 'text-gold-light' : 'text-gold']}>first.</em> Surgery only when needed.
+</Tag>
 <p class:list={['mt-6 max-w-md text-[1.05rem] leading-relaxed', light ? 'text-white/80' : 'text-slate']}>
-  Minimally invasive, motion-preserving and robotic-assisted spine care, delivered with evidence and compassion in Long Beach.
+  Most back and neck problems improve without an operation. When surgery is the answer, Dr. Bhalla uses the least invasive option that will work, in Long Beach.
 </p>
 <div class="mt-8 flex flex-wrap gap-3">
-  <Button href="/contact" variant={light ? 'light' : 'dark'}>Book a consultation</Button>
-  <Button href="#about" variant={light ? 'outline-light' : 'outline'}>Meet Dr. Bhalla</Button>
+  <Button href={site.bookingUrl} external variant={light ? 'light' : 'dark'}>Book a consultation</Button>
+  <Button href="/services/non-surgical-care" variant={light ? 'outline-light' : 'outline'}>Non-surgical care</Button>
 </div>
 
 <div class:list={['mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 border-t pt-6', light ? 'border-white/20' : 'border-line']}>

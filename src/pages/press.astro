@@ -34,7 +34,7 @@ const sorted = press;
           <Reveal client:visible as="li" delay={(i % 3) * 0.08}>
             <a href={`/press/${p.slug}`} class="card-line group flex h-full flex-col overflow-hidden rounded-sm border border-line bg-porcelain transition-colors hover:bg-white">
               <div class="img-zoom aspect-[16/10] overflow-hidden bg-ink-soft">
-                <img src={p.image} alt="" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+                <img src={p.image} alt={p.title} loading="lazy" decoding="async" class="h-full w-full object-cover" />
               </div>
               <div class="flex flex-1 flex-col p-7">
                 <p class="eyebrow text-gold">{p.outlet}</p>

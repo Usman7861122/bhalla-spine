@@ -1,4 +1,5 @@
 ---
+import { site } from '@data/site';
 /**
  * "Near you" section: city focused heading, short copy and the communities we serve.
  */
@@ -22,7 +23,7 @@ const { title, text, areas, tone = 'white' } = Astro.props;
       <p class="eyebrow gold-rule text-gold">Near you</p>
       <h2 class="display mt-5 text-display-md text-ink">{title}</h2>
       {text.map((t) => <p class="mt-6 text-lg leading-relaxed">{t}</p>)}
-      <div class="mt-10"><Button href="/contact">Book a consultation</Button></div>
+      <div class="mt-10"><Button href={site.bookingUrl} external>Book a consultation</Button></div>
     </Reveal>
     <Reveal client:visible delay={0.1} className="lg:col-span-6">
       <p class="eyebrow text-gold">Patients come to us from</p>

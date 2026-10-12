@@ -52,7 +52,7 @@ const local = localFor(group.title, 'group');
           Below are the {items.length === 1 ? 'condition' : `${items.length} conditions`} in this group that Dr. Bhalla diagnoses and treats. Each page explains what it is, how it is found and the full range of treatment, from therapy to the least invasive procedure that will work.
         </p>
         <div class="mt-10 flex flex-wrap gap-3">
-          <Button href="/contact">Book a consultation</Button>
+          <Button href={site.bookingUrl} external>Book a consultation</Button>
           <Button href={site.phoneHref} variant="outline">{site.phone}</Button>
         </div>
       </Reveal>
@@ -68,7 +68,7 @@ const local = localFor(group.title, 'group');
           </div>
           <div class="col-span-2 bg-porcelain p-7">
             <dt class="eyebrow text-gold">Our approach</dt>
-            <dd class="mt-3 leading-relaxed">Most patients in this group never need an operation. When they do, Dr. Bhalla uses minimally invasive, motion preserving and robotic assisted techniques.</dd>
+            <dd class="mt-3 leading-relaxed">Most patients in this group never need an operation. Care starts with evaluation and non-surgical treatment. When surgery is the answer, Dr. Bhalla uses the least invasive option that will work.</dd>
           </div>
         </dl>
       </Reveal>
@@ -94,7 +94,7 @@ const local = localFor(group.title, 'group');
             >
               <img
                 src={c.image}
-                alt=""
+                alt={c.title}
                 loading="lazy"
                 decoding="async"
                 class="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-[1.05]"

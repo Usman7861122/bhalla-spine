@@ -151,7 +151,9 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
             {site.phone}
           </a>
           <a
-            href="/contact"
+            href={site.bookingUrl}
+            target="_blank"
+            rel="noopener"
             className={cn(
               'hover-lift inline-flex h-11 items-center whitespace-nowrap rounded-full px-6 text-[0.85rem] font-medium tracking-wide transition-colors',
               onDark ? 'bg-white text-ink hover:bg-gold-light' : 'bg-ink text-white hover:bg-gold',
@@ -271,7 +273,9 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
               )}
               <div className="mt-8 flex flex-col gap-3">
                 <a
-                  href="/contact"
+                  href={site.bookingUrl}
+                  target="_blank"
+                  rel="noopener"
                   className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-6 text-sm font-medium text-white"
                 >
                   Book a consultation

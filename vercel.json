@@ -1,0 +1,303 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/appointment/",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/appointment",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/privacy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms-conditions/",
+      "destination": "/privacy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms-conditions",
+      "destination": "/privacy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/testimonials/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/testimonials",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/articles/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/articles",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/americas-best-spine-surgeons-2024/",
+      "destination": "/press/newsweek-150-best-spine-surgeons-2024/",
+      "statusCode": 301
+    },
+    {
+      "source": "/americas-best-spine-surgeons-2024",
+      "destination": "/press/newsweek-150-best-spine-surgeons-2024/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/cervical-herniated-disc/",
+      "destination": "/conditions/cervical-herniated-disc/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/cervical-herniated-disc",
+      "destination": "/conditions/cervical-herniated-disc/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/cervical-myelopathy/",
+      "destination": "/conditions/cervical-myelopathy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/cervical-myelopathy",
+      "destination": "/conditions/cervical-myelopathy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/disc-replacement-surgery/",
+      "destination": "/services/cervical-disc-replacement/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/disc-replacement-surgery",
+      "destination": "/services/cervical-disc-replacement/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/lumbar-fusion/",
+      "destination": "/services/motion-preservation-surgery/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/lumbar-fusion",
+      "destination": "/services/motion-preservation-surgery/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/minimally-invasive-spine-surgery/",
+      "destination": "/services/minimally-invasive-spinal-surgery/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/minimally-invasive-spine-surgery",
+      "destination": "/services/minimally-invasive-spinal-surgery/",
+      "statusCode": 301
+    },
+    {
+      "source": "/burning-pain-shooting-down-your-leg-sciatica-treatment-in-long-beach-90807/",
+      "destination": "/blog/sciatica-treatment-long-beach/",
+      "statusCode": 301
+    },
+    {
+      "source": "/burning-pain-shooting-down-your-leg-sciatica-treatment-in-long-beach-90807",
+      "destination": "/blog/sciatica-treatment-long-beach/",
+      "statusCode": 301
+    },
+    {
+      "source": "/relief-from-sciatica-microdiscectomy-for-herniated-disc-in-bixby-knolls/",
+      "destination": "/blog/microdiscectomy-herniated-disc-bixby-knolls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/relief-from-sciatica-microdiscectomy-for-herniated-disc-in-bixby-knolls",
+      "destination": "/blog/microdiscectomy-herniated-disc-bixby-knolls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/disc-replacement-vs-spinal-fusion-which-is-right-for-you/",
+      "destination": "/blog/motion-preserving-vs-fusion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/disc-replacement-vs-spinal-fusion-which-is-right-for-you",
+      "destination": "/blog/motion-preserving-vs-fusion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/trust-how-surgeons-kept-what-health-care-lost/",
+      "destination": "/press/newsweek-trust-how-surgeons-kept-what-health-care-lost/",
+      "statusCode": 301
+    },
+    {
+      "source": "/trust-how-surgeons-kept-what-health-care-lost",
+      "destination": "/press/newsweek-trust-how-surgeons-kept-what-health-care-lost/",
+      "statusCode": 301
+    },
+    {
+      "source": "/advancing-spine-health-the-shift-toward-minimally-invasive-excellence/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/advancing-spine-health-the-shift-toward-minimally-invasive-excellence",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/can-a-spinal-compression-fracture-heal-without-surgery/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/can-a-spinal-compression-fracture-heal-without-surgery",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cervical-herniated-disc-understanding-neck-pain-and-your-treatment-options/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cervical-herniated-disc-understanding-neck-pain-and-your-treatment-options",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/finding-the-best-orthopedic-spine-specialist-in-long-beach-what-to-look-for/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/finding-the-best-orthopedic-spine-specialist-in-long-beach-what-to-look-for",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/minimally-invasive-spine-surgery-advanced-care-for-neck-and-back-pain/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/minimally-invasive-spine-surgery-advanced-care-for-neck-and-back-pain",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/recovery-after-disc-replacement-what-to-expect/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/recovery-after-disc-replacement-what-to-expect",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-are-the-primary-symptoms-of-an-osteoporotic-compression-fracture/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-are-the-primary-symptoms-of-an-osteoporotic-compression-fracture",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-causes-cervical-radiculopathy-and-can-it-be-treated-without-surgery/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-causes-cervical-radiculopathy-and-can-it-be-treated-without-surgery",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/when-is-surgery-necessary-for-a-pinched-nerve-in-the-neck/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/when-is-surgery-necessary-for-a-pinched-nerve-in-the-neck",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/when-should-you-see-an-orthopedic-surgeon-in-long-beach/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/when-should-you-see-an-orthopedic-surgeon-in-long-beach",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conditions/cervical-fusion/",
+      "destination": "/services/cervical-fusion/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conditions/cervical-fusion",
+      "destination": "/services/cervical-fusion/",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": ".*\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ]
+}
