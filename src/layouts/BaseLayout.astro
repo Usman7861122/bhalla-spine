@@ -52,6 +52,7 @@ const schema = {
       areaServed: { '@type': 'City', name: 'Long Beach' },
       openingHoursSpecification,
       parentOrganization: { '@type': 'Organization', name: 'Commons Clinic', url: 'https://commonsclinic.com/' },
+      sameAs: [site.social.linkedin],
       employee: { '@id': `${origin}/#physician` },
     },
     {
@@ -65,6 +66,7 @@ const schema = {
       image: `${origin}/images/C1A3704-scaled-e1747239020857.jpg`,
       address,
       openingHoursSpecification,
+      sameAs: [site.social.linkedin],
       worksFor: { '@id': `${origin}/#clinic` },
     },
   ],

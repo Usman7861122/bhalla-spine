@@ -70,10 +70,11 @@ export const site = {
   social: {
     instagram: '#',
     facebook: '#',
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/in/amandeep-bhalla-b596093/',
   },
 };
 
+import { legacyPosts } from './legacyPosts';
 export { services } from './services';
 export type { Service, ServiceContent } from './services';
 
@@ -226,7 +227,7 @@ export const testimonials = [
   },
 ];
 
-export const posts = [
+const blogPosts = [
   {
     slug: 'microdiscectomy-herniated-disc-bixby-knolls',
     title: 'Relief from sciatica: microdiscectomy for a herniated disc in Bixby Knolls',
@@ -258,6 +259,12 @@ export const posts = [
     image: '/images/C1A4022-scaled-e1747319220831.jpg',
   },
 ];
+
+/** Every article, newest first. `href` is the page address (the six older articles keep their original root addresses). */
+export const posts = [
+  ...legacyPosts.map((p) => ({ slug: p.slug, title: p.title, excerpt: p.excerpt, date: p.date, readTime: p.readTime, category: p.category, image: p.image, href: `/${p.slug}/` })),
+  ...blogPosts.map((p) => ({ ...p, href: `/blog/${p.slug}/` })),
+].sort((a, b) => b.date.localeCompare(a.date));
 
 /** Header navigation. `mega` names the mega menu an item opens. */
 export const nav: { label: string; href: string; mega?: 'services' | 'conditions' }[] = [

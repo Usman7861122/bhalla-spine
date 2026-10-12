@@ -33,16 +33,6 @@
       "statusCode": 301
     },
     {
-      "source": "/terms-conditions/",
-      "destination": "/privacy/",
-      "statusCode": 301
-    },
-    {
-      "source": "/terms-conditions",
-      "destination": "/privacy/",
-      "statusCode": 301
-    },
-    {
       "source": "/testimonials/",
       "destination": "/about/",
       "statusCode": 301
@@ -183,16 +173,6 @@
       "statusCode": 301
     },
     {
-      "source": "/can-a-spinal-compression-fracture-heal-without-surgery/",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/can-a-spinal-compression-fracture-heal-without-surgery",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
       "source": "/cervical-herniated-disc-understanding-neck-pain-and-your-treatment-options/",
       "destination": "/blog/",
       "statusCode": 301
@@ -219,56 +199,6 @@
     },
     {
       "source": "/minimally-invasive-spine-surgery-advanced-care-for-neck-and-back-pain",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/recovery-after-disc-replacement-what-to-expect/",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/recovery-after-disc-replacement-what-to-expect",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/what-are-the-primary-symptoms-of-an-osteoporotic-compression-fracture/",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/what-are-the-primary-symptoms-of-an-osteoporotic-compression-fracture",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/what-causes-cervical-radiculopathy-and-can-it-be-treated-without-surgery/",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/what-causes-cervical-radiculopathy-and-can-it-be-treated-without-surgery",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/when-is-surgery-necessary-for-a-pinched-nerve-in-the-neck/",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/when-is-surgery-necessary-for-a-pinched-nerve-in-the-neck",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/when-should-you-see-an-orthopedic-surgeon-in-long-beach/",
-      "destination": "/blog/",
-      "statusCode": 301
-    },
-    {
-      "source": "/when-should-you-see-an-orthopedic-surgeon-in-long-beach",
       "destination": "/blog/",
       "statusCode": 301
     },

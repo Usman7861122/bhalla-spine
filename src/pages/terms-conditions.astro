@@ -1,0 +1,74 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import Container from '@components/ui/Container.astro';
+import { site, images } from '@data/site';
+---
+
+<PageLayout
+  title="Terms and conditions"
+  eyebrow="Legal"
+  lede="The rules for using this website."
+  description="Terms and conditions for using the Bhalla Spine website."
+  image={images.stenosis}
+  imageAlt="Terms and conditions"
+  position="center"
+>
+  <section class="section-y">
+    <Container>
+      <div class="mx-auto max-w-2xl space-y-6 text-lg leading-relaxed text-slate">
+        <p>
+          By accessing and using our website, you agree to comply with and be bound by the following Terms &amp;
+          Conditions. If you do not agree with any part of these terms, please do not use our website.
+        </p>
+
+        <h2 class="display text-2xl text-ink">1. Use of website</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>The content on this website is for informational purposes only and should not be considered medical advice. Always consult a healthcare professional for medical concerns.</li>
+          <li>You agree not to misuse, copy, or distribute any content without our permission.</li>
+        </ul>
+
+        <h2 class="display text-2xl text-ink">2. Intellectual property</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>All content, including text, images, logos, and other materials, is owned by Bhalla Spine or licensed for use. Unauthorized use or reproduction is prohibited.</li>
+        </ul>
+
+        <h2 class="display text-2xl text-ink">3. No medical advice</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>The information on this website does not constitute medical advice or establish a doctor-patient relationship. If you have a medical emergency, seek professional assistance immediately.</li>
+        </ul>
+
+        <h2 class="display text-2xl text-ink">4. Limitation of liability</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>Bhalla Spine is not liable for any damages arising from the use or inability to use our website.</li>
+          <li>We do not guarantee the accuracy, completeness, or reliability of the information provided.</li>
+        </ul>
+
+        <h2 class="display text-2xl text-ink">5. Third-party links</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>Our website may contain links to third-party websites for additional information. We do not endorse or take responsibility for the content or privacy practices of these websites.</li>
+        </ul>
+
+        <h2 class="display text-2xl text-ink">6. Privacy policy</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>Your use of this website is also governed by our <a class="link-underline text-ink" href="/privacy">Privacy Policy</a>, which outlines how we collect and use your information.</li>
+        </ul>
+
+        <h2 class="display text-2xl text-ink">7. Modifications to terms</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>We reserve the right to update or change these Terms &amp; Conditions at any time. Continued use of the website after changes implies acceptance of the updated terms.</li>
+        </ul>
+
+        <h2 class="display text-2xl text-ink">8. Governing law</h2>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>These Terms &amp; Conditions are governed by the laws of the State of California, United States, and any disputes will be resolved in the applicable courts.</li>
+        </ul>
+
+        <h2 class="display text-2xl text-ink">Questions</h2>
+        <p>
+          Contact us at <a class="link-underline text-ink" href={`mailto:${site.email}`}>{site.email}</a> or
+          <a class="link-underline text-ink" href={site.phoneHref}>{site.phone}</a>.
+        </p>
+      </div>
+    </Container>
+  </section>
+</PageLayout>

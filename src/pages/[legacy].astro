@@ -1,0 +1,15 @@
+---
+/**
+ * Six older articles live at the root of the site (same web address as on the old website)
+ * so their search ranking carries over. Real pages such as /about take priority over this route.
+ */
+import ArticleBody from '@components/sections/ArticleBody.astro';
+import { legacyPosts } from '@data/legacyPosts';
+
+export function getStaticPaths() {
+  return legacyPosts.map((p) => ({ params: { legacy: p.slug }, props: { post: p } }));
+}
+const { post } = Astro.props;
+---
+
+<ArticleBody {...post} />

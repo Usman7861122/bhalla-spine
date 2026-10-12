@@ -84,6 +84,7 @@ const quickLinks = nav.filter((n) => !n.mega);
         <span class="mt-1 block text-white/45">Fax {site.fax}</span>
         <a href={`mailto:${site.email}`} class="footer-link link-underline mt-4 block break-all">{site.email}</a>
         <span class="mt-4 block text-white/45">{site.hours}</span>
+        <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" class="footer-link link-underline mt-4 block">LinkedIn</a>
       </address>
     </div>
   </div>
@@ -93,6 +94,7 @@ const quickLinks = nav.filter((n) => !n.mega);
       <p>© {year} {site.name}. All rights reserved.</p>
       <div class="flex gap-6">
         <a href="/privacy" class="hover:text-white transition-colors">Privacy policy</a>
+        <a href="/terms-conditions" class="hover:text-white transition-colors">Terms &amp; conditions</a>
         <a href="/accessibility" class="hover:text-white transition-colors">Accessibility</a>
       </div>
     </div>
