@@ -67,7 +67,7 @@ export default function ScrollTimeline({ items, tone = 'dark', numbered = true }
               className={cn(
                 'absolute -left-[calc(2rem+5px)] top-2 h-2.5 w-2.5 rounded-full border transition-all duration-500 md:-left-[calc(2.5rem+5px)]',
                 on
-                  ? 'scale-125 border-gold bg-gold shadow-[0_0_0_6px_rgba(184,151,90,0.18)]'
+                  ? 'scale-125 border-gold bg-gold shadow-[0_0_0_6px_rgba(110,110,110,0.18)]'
                   : light
                     ? 'border-white/40 bg-ink'
                     : 'border-gold bg-porcelain',

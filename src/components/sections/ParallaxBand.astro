@@ -52,11 +52,11 @@ const { src, alt, eyebrow, title, text, cta, stats = [], position = 'center 40%'
     </a>
 
     {stats.length > 0 && (
-      <ul class="mt-14 grid gap-8 border-t border-white/20 pt-8 sm:grid-cols-3">
+      <ul class="mt-14 grid gap-8 border-t border-white/20 pt-8 sm:grid-cols-3 sm:gap-6 lg:gap-8">
         {stats.map((s) => (
-          <li class="pr-6">
-            <p class="display text-4xl text-gold-light md:text-5xl">{s.value}</p>
-            <p class="mt-2 text-[0.85rem] uppercase tracking-[0.18em] text-white/70">{s.label}</p>
+          <li class="min-w-0 pr-2 lg:pr-6">
+            <p class="display text-4xl text-gold-light sm:text-[1.6rem] md:text-[2rem] lg:text-5xl">{s.value}</p>
+            <p class="mt-2 text-[0.8rem] uppercase tracking-[0.1em] text-white/70 lg:text-[0.85rem] lg:tracking-[0.18em]">{s.label}</p>
           </li>
         ))}
       </ul>
@@ -86,9 +86,9 @@ const { src, alt, eyebrow, title, text, cta, stats = [], position = 'center 40%'
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(15, 31, 46, 0.35) 0%,
-      rgba(15, 31, 46, 0.45) 45%,
-      rgba(15, 31, 46, 0.8) 100%
+      rgba(17,17,17, 0.35) 0%,
+      rgba(17,17,17, 0.45) 45%,
+      rgba(17,17,17, 0.8) 100%
     );
   }
   @media (prefers-reduced-motion: reduce) {

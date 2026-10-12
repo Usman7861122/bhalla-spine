@@ -5,17 +5,17 @@
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 
-  /* Palette */
-  --color-ink: #0f1f2e;        /* deep navy: dark sections, headings */
-  --color-ink-soft: #16293b;   /* slightly lighter navy for cards on ink */
-  --color-porcelain: #f4f6f7;  /* page background */
-  --color-bone: #e6eaec;       /* subtle panels */
-  --color-line: #d5dbdf;       /* hairlines */
-  --color-line-dark: #24384c;  /* hairlines on ink */
-  --color-slate: #4b5a68;      /* body text */
-  --color-mist: #8a97a3;       /* muted text */
-  --color-gold: #b8975a;       /* accent: use sparingly */
-  --color-gold-light: #d8c294;
+  /* Palette: black and white, matching commonsclinic.com */
+  --color-ink: #111111;        /* black: dark sections, headings */
+  --color-ink-soft: #1c1c1c;   /* slightly lighter black for cards on ink */
+  --color-porcelain: #fafafa;  /* page background */
+  --color-bone: #efefef;       /* subtle panels */
+  --color-line: #dcdcdc;       /* hairlines */
+  --color-line-dark: #2e2e2e;  /* hairlines on ink */
+  --color-slate: #4a4a4a;      /* body text */
+  --color-mist: #8a8a8a;       /* muted text */
+  --color-gold: #6e6e6e;       /* neutral accent (was gold): eyebrows, rules, active dots */
+  --color-gold-light: #c4c4c4; /* neutral accent on black */
   --color-white: #ffffff;
 
   /* Type scale */
@@ -137,7 +137,7 @@ body {
 }
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 50px -30px rgba(15, 31, 46, 0.45);
+  box-shadow: 0 24px 50px -30px rgba(17,17,17, 0.45);
 }
 
 /* Image zoom inside any clipped container. */
@@ -182,7 +182,7 @@ body {
   inset: 0;
   pointer-events: none;
   opacity: 0;
-  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgba(216, 194, 148, 0.16), transparent 60%);
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgba(220, 220, 220, 0.16), transparent 60%);
   transition: opacity 0.5s ease;
 }
 .spot:hover::after {

@@ -36,24 +36,17 @@ const quickLinks = nav.filter((n) => !n.mega);
   <!-- Columns -->
   <div class="container-x grid gap-12 py-16 md:grid-cols-12">
     <div class="md:col-span-4">
-      <a href="/" class="flex items-baseline gap-2 leading-none">
-        <span class="display text-[1.7rem]">Amandeep Bhalla</span>
-        <span class="text-xs font-medium tracking-[0.2em] text-gold-light">MD</span>
+      <a href="/" aria-label="Amandeep Bhalla, MD, home" class="flex items-center gap-4 leading-none">
+        <img src={images.commonsLogoWhite} alt="" width="92" height="25" class="h-7 w-auto" />
+        <span aria-hidden="true" class="h-7 w-px bg-white/40"></span>
+        <span class="text-[0.85rem] uppercase tracking-[0.08em]">
+          <span class="font-semibold">Amandeep</span> <span class="font-light">Bhalla, MD</span>
+        </span>
       </a>
       <p class="mt-5 max-w-sm text-[0.95rem] leading-relaxed text-white/60">
         Board-certified, fellowship-trained orthopedic spine surgeon. Medical Director, Spine Center and Vice Chair,
         Orthopaedic Surgery at MemorialCare Long Beach Medical Center.
       </p>
-      <a
-        href={site.affiliation.url}
-        target="_blank"
-        rel="noopener"
-        class="mt-6 inline-flex items-center gap-4 text-white/50 transition-colors hover:text-white"
-        aria-label={`Affiliated with ${site.affiliation.name} (opens in a new tab)`}
-      >
-        <span class="eyebrow">Affiliated with</span>
-        <img src={images.commonsLogoWhite} alt={site.affiliation.name} width="110" height="30" class="h-5 w-auto opacity-70" />
-      </a>
     </div>
 
     <div class="md:col-span-2">

@@ -58,21 +58,21 @@ const confirmationText = (name) =>
   ].join('\n');
 
 const confirmationHtml = (name) => `<!doctype html>
-<html><body style="margin:0;padding:0;background:#f3f4f6;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:32px 16px;">
+<html><body style="margin:0;padding:0;background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:32px 16px;">
 <tr><td align="center">
-<table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background:#ffffff;border:1px solid #e3e6ea;">
-<tr><td style="background:#0f1f2e;padding:28px 32px;color:#ffffff;font-family:Georgia,'Times New Roman',serif;font-size:22px;">Amandeep Bhalla, MD</td></tr>
-<tr><td style="padding:32px;font-family:Arial,Helvetica,sans-serif;color:#334155;font-size:16px;line-height:1.6;">
-<p style="margin:0 0 16px;font-size:20px;color:#0f1f2e;font-family:Georgia,'Times New Roman',serif;">Hello ${esc(name)},</p>
+<table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background:#ffffff;border:1px solid #e2e2e2;">
+<tr><td style="background:#111111;padding:28px 32px;color:#ffffff;font-family:Georgia,'Times New Roman',serif;font-size:22px;">Amandeep Bhalla, MD</td></tr>
+<tr><td style="padding:32px;font-family:Arial,Helvetica,sans-serif;color:#333333;font-size:16px;line-height:1.6;">
+<p style="margin:0 0 16px;font-size:20px;color:#111111;font-family:Georgia,'Times New Roman',serif;">Hello ${esc(name)},</p>
 <p style="margin:0 0 16px;">Thank you for contacting our office. We have received your appointment request.</p>
 <p style="margin:0 0 16px;">A member of our team will call you back within <strong>one business day</strong>.</p>
-<p style="margin:0 0 16px;">If your matter is urgent, please call us at <a href="tel:+15624278119" style="color:#0f1f2e;">${esc(CLINIC.phone)}</a>. If this is a medical emergency, call 911 or go to the nearest emergency room.</p>
-<p style="margin:0;font-size:14px;color:#64748b;">For your privacy, please do not reply to this email with medical records. We will ask for them securely once we have spoken.</p>
+<p style="margin:0 0 16px;">If your matter is urgent, please call us at <a href="tel:+15624278119" style="color:#111111;">${esc(CLINIC.phone)}</a>. If this is a medical emergency, call 911 or go to the nearest emergency room.</p>
+<p style="margin:0;font-size:14px;color:#666666;">For your privacy, please do not reply to this email with medical records. We will ask for them securely once we have spoken.</p>
 </td></tr>
-<tr><td style="padding:20px 32px;background:#f8f9fb;border-top:1px solid #e3e6ea;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#64748b;line-height:1.6;">
+<tr><td style="padding:20px 32px;background:#fafafa;border-top:1px solid #e2e2e2;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#666666;line-height:1.6;">
 ${esc(CLINIC.place)}<br>${esc(CLINIC.address)}<br>${esc(CLINIC.phone)} &middot; ${esc(CLINIC.hours)}<br>
-<a href="${CLINIC.site}" style="color:#64748b;">${CLINIC.site.replace('https://', '')}</a>
+<a href="${CLINIC.site}" style="color:#666666;">${CLINIC.site.replace('https://', '')}</a>
 </td></tr>
 </table>
 </td></tr></table>

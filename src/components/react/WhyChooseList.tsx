@@ -63,7 +63,7 @@ export default function WhyChooseList({ items }: Props) {
               className={cn(
                 'relative z-10 flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-500',
                 on
-                  ? 'border-gold bg-gold text-white shadow-[0_0_0_8px_rgba(184,151,90,0.14)]'
+                  ? 'border-gold bg-gold text-white shadow-[0_0_0_8px_rgba(110,110,110,0.14)]'
                   : 'border-line bg-porcelain text-gold',
               )}
             >

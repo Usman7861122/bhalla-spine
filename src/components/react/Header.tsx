@@ -91,17 +91,28 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
         if (!headerRef.current?.contains(e.relatedTarget as Node)) setMega(null);
       }}
     >
-      <div className="container-x flex h-20 items-center justify-between gap-6">
+      <div className="container-x flex h-20 items-center justify-between gap-4 xl:gap-6">
         {/* Brand */}
-        <a href="/" className={cn('flex shrink-0 items-baseline gap-2 whitespace-nowrap leading-none', textColor)}>
-          <span className="display text-[1.55rem] tracking-tight">Amandeep Bhalla</span>
-          <span className={cn('text-xs font-medium tracking-[0.2em]', onDark ? 'text-gold-light' : 'text-gold')}>
-            MD
+        <a
+          href="/"
+          aria-label="Amandeep Bhalla, MD, home"
+          className={cn('flex shrink-0 items-center gap-3 whitespace-nowrap leading-none sm:gap-4', textColor)}
+        >
+          <img
+            src="/images/commons-logo-black.svg"
+            alt=""
+            width="92"
+            height="25"
+            className={cn('h-[1.45rem] w-auto sm:h-[1.65rem]', onDark && 'brightness-0 invert')}
+          />
+          <span aria-hidden="true" className="h-6 w-px bg-current opacity-40 sm:h-7" />
+          <span className="text-[0.7rem] uppercase tracking-[0.08em] sm:text-[0.8rem]">
+            <span className="font-semibold">Amandeep</span> <span className="font-light">Bhalla, MD</span>
           </span>
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Main">
+        <nav className="hidden xl:flex items-center gap-5 2xl:gap-8" aria-label="Main">
           {nav.map((item) =>
             item.mega ? (
               <div
@@ -143,7 +154,7 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
         </nav>
 
         {/* Right actions */}
-        <div className="hidden lg:flex shrink-0 items-center gap-6">
+        <div className="hidden xl:flex shrink-0 items-center gap-6">
           <a
             href={site.phoneHref}
             className={cn('hidden 2xl:block whitespace-nowrap text-[0.9rem] font-medium transition-colors', mutedColor)}
@@ -155,7 +166,7 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
             target="_blank"
             rel="noopener"
             className={cn(
-              'hover-lift inline-flex h-11 items-center whitespace-nowrap rounded-full px-6 text-[0.85rem] font-medium tracking-wide transition-colors',
+              'hover-lift inline-flex h-11 items-center whitespace-nowrap rounded-full px-5 xl:px-6 text-[0.85rem] font-medium tracking-wide transition-colors',
               onDark ? 'bg-white text-ink hover:bg-gold-light' : 'bg-ink text-white hover:bg-gold',
             )}
           >
@@ -166,7 +177,7 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
         {/* Mobile toggle */}
         <button
           type="button"
-          className={cn('lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full', textColor)}
+          className={cn('xl:hidden inline-flex h-11 w-11 items-center justify-center rounded-full', textColor)}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((v) => !v)}
@@ -190,7 +201,7 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.28, ease }}
-            className="hidden lg:block absolute inset-x-0 top-full border-b border-line bg-porcelain shadow-[0_30px_60px_-30px_rgba(15,31,46,0.25)]"
+            className="hidden xl:block absolute inset-x-0 top-full border-b border-line bg-porcelain shadow-[0_30px_60px_-30px_rgba(17,17,17,0.25)]"
             onMouseEnter={keepMega}
             onMouseLeave={scheduleClose}
           >
@@ -208,7 +219,7 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden fixed inset-0 top-20 z-40 overflow-y-auto bg-porcelain"
+            className="xl:hidden fixed inset-0 top-20 z-40 overflow-y-auto bg-porcelain"
           >
             <nav className="container-x flex flex-col py-6" aria-label="Mobile">
               {nav.map((item) =>

@@ -21,12 +21,12 @@ const { tone = 'light', class: className = '' } = Astro.props;
 
 <style>
   .aurora {
-    --a1: #d8c294; /* gold light */
-    --a2: #f4f6f7; /* porcelain */
-    --a3: #b8975a; /* gold */
-    --a4: #c9d4dd; /* soft slate */
-    --a5: #e6eaec; /* bone */
-    --base: #f4f6f7;
+    --a1: #dcdcdc; /* gold light */
+    --a2: #fafafa; /* porcelain */
+    --a3: #a8a8a8; /* gold */
+    --a4: #e6e6e6; /* soft grey */
+    --a5: #efefef; /* bone */
+    --base: #fafafa;
     --strength: 1;
     --stripe: repeating-linear-gradient(
       100deg,
@@ -55,9 +55,9 @@ const { tone = 'light', class: className = '' } = Astro.props;
     transform: scaleX(-1); /* mirror: right to left */
   }
   .aurora.dark {
-    --base: #0f1f2e;
-    --a2: #16293b;
-    --a5: #24384c;
+    --base: #111111;
+    --a2: #1c1c1c;
+    --a5: #2e2e2e;
     --strength: 0.6;
   }
 
