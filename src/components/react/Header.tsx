@@ -98,6 +98,10 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
           aria-label="Amandeep Bhalla, MD, home"
           className={cn('flex shrink-0 items-center gap-3 whitespace-nowrap leading-none sm:gap-4', textColor)}
         >
+          <span className="text-[0.7rem] uppercase tracking-[0.08em] sm:text-[0.8rem]">
+            <span className="font-semibold">Amandeep</span> <span className="font-light">Bhalla, MD</span>
+          </span>
+          <span aria-hidden="true" className="h-6 w-px bg-current opacity-40 sm:h-7" />
           <img
             src="/images/commons-logo-black.svg"
             alt=""
@@ -105,10 +109,6 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
             height="25"
             className={cn('h-[1.45rem] w-auto sm:h-[1.65rem]', onDark && 'brightness-0 invert')}
           />
-          <span aria-hidden="true" className="h-6 w-px bg-current opacity-40 sm:h-7" />
-          <span className="text-[0.7rem] uppercase tracking-[0.08em] sm:text-[0.8rem]">
-            <span className="font-semibold">Amandeep</span> <span className="font-light">Bhalla, MD</span>
-          </span>
         </a>
 
         {/* Desktop nav */}
