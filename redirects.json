@@ -1,0 +1,89 @@
+{
+  "_note": "Single source of old to new web addresses (301). Run `npm run redirects` to rebuild vercel.json, deploy/htaccess and deploy/nginx-redirects.conf. Entries whose address is now a real page are skipped automatically.",
+  "redirects": [
+    {
+      "from": "/appointment",
+      "to": "/contact/"
+    },
+    {
+      "from": "/contact-us",
+      "to": "/contact/"
+    },
+    {
+      "from": "/privacy-policy",
+      "to": "/privacy/"
+    },
+    {
+      "from": "/testimonials",
+      "to": "/about/"
+    },
+    {
+      "from": "/articles",
+      "to": "/blog/"
+    },
+    {
+      "from": "/blogs",
+      "to": "/blog/"
+    },
+    {
+      "from": "/americas-best-spine-surgeons-2024",
+      "to": "/press/newsweek-150-best-spine-surgeons-2024/"
+    },
+    {
+      "from": "/services/cervical-herniated-disc",
+      "to": "/conditions/cervical-herniated-disc/"
+    },
+    {
+      "from": "/services/cervical-myelopathy",
+      "to": "/conditions/cervical-myelopathy/"
+    },
+    {
+      "from": "/services/disc-replacement-surgery",
+      "to": "/services/cervical-disc-replacement/"
+    },
+    {
+      "from": "/services/lumbar-fusion",
+      "to": "/services/motion-preservation-surgery/"
+    },
+    {
+      "from": "/services/minimally-invasive-spine-surgery",
+      "to": "/services/minimally-invasive-spinal-surgery/"
+    },
+    {
+      "from": "/burning-pain-shooting-down-your-leg-sciatica-treatment-in-long-beach-90807",
+      "to": "/blog/"
+    },
+    {
+      "from": "/relief-from-sciatica-microdiscectomy-for-herniated-disc-in-bixby-knolls",
+      "to": "/blog/"
+    },
+    {
+      "from": "/disc-replacement-vs-spinal-fusion-which-is-right-for-you",
+      "to": "/blog/"
+    },
+    {
+      "from": "/trust-how-surgeons-kept-what-health-care-lost",
+      "to": "/press/newsweek-trust-how-surgeons-kept-what-health-care-lost/"
+    },
+    {
+      "from": "/advancing-spine-health-the-shift-toward-minimally-invasive-excellence",
+      "to": "/blog/"
+    },
+    {
+      "from": "/cervical-herniated-disc-understanding-neck-pain-and-your-treatment-options",
+      "to": "/blog/"
+    },
+    {
+      "from": "/finding-the-best-orthopedic-spine-specialist-in-long-beach-what-to-look-for",
+      "to": "/blog/"
+    },
+    {
+      "from": "/minimally-invasive-spine-surgery-advanced-care-for-neck-and-back-pain",
+      "to": "/blog/"
+    },
+    {
+      "from": "/conditions/cervical-fusion",
+      "to": "/services/cervical-fusion/"
+    }
+  ]
+}

@@ -104,7 +104,7 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
           <span aria-hidden="true" className="h-6 w-px bg-current opacity-40 sm:h-7" />
           <img
             src="/images/commons-logo-black.svg"
-            alt=""
+            alt="Commons Clinic"
             width="92"
             height="25"
             className={cn('h-[1.45rem] w-auto sm:h-[1.65rem]', onDark && 'brightness-0 invert')}

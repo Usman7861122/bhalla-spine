@@ -1,0 +1,16 @@
+---
+/**
+ * Blog posts live at the top of the site (for example /recovery-after-disc-replacement-what-to-expect/),
+ * the same address they had on WordPress, so search rankings carry over.
+ * Real pages such as /about take priority over this route.
+ */
+import ArticleBody from '@components/sections/ArticleBody.astro';
+import { posts } from '@data/site';
+
+export function getStaticPaths() {
+  return posts.filter((p) => !p.href.startsWith('/blog/')).map((p) => ({ params: { post: p.slug }, props: { post: p } }));
+}
+const { post } = Astro.props;
+---
+
+<ArticleBody {...post} />

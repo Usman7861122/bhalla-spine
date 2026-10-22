@@ -6,6 +6,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # WordPress calls this when the client publishes or updates a post (see docs/CMS-SETUP.md).
+  repository_dispatch:
+    types: [wordpress-publish]
 
 permissions:
   contents: read
@@ -26,7 +29,10 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+      - name: Build (pulls the latest posts from WordPress first)
+        run: npm run build
+        env:
+          WP_API: ${{ vars.WP_API }}
 
       - uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -36,3 +42,10 @@ jobs:
 
       - name: Copy dist to S3
         run: aws s3 sync dist s3://bhalla-spine-site --delete
+
+      # A zip of the finished site, for any host that is not S3 (download it, or add an SFTP/rsync step).
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: dist
+          retention-days: 14

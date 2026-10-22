@@ -74,7 +74,7 @@ export const site = {
   },
 };
 
-import { legacyPosts } from './legacyPosts';
+import { blogPosts } from './wpPosts';
 export { services } from './services';
 export type { Service, ServiceContent } from './services';
 
@@ -227,44 +227,8 @@ export const testimonials = [
   },
 ];
 
-const blogPosts = [
-  {
-    slug: 'microdiscectomy-herniated-disc-bixby-knolls',
-    title: 'Relief from sciatica: microdiscectomy for a herniated disc in Bixby Knolls',
-    excerpt:
-      'When a herniated disc presses on a nerve root, a small outpatient procedure can bring relief the same day. Here is how microdiscectomy works and who it helps.',
-    date: '2025-06-12',
-    readTime: '5 min read',
-    category: 'Procedures',
-    image: '/images/C1A3704-scaled-e1747239020857.jpg',
-  },
-  {
-    slug: 'sciatica-treatment-long-beach',
-    title: 'Burning pain shooting down your leg? Sciatica treatment in Long Beach',
-    excerpt:
-      'Sciatica has many causes and most of them do not need surgery. Learn the warning signs, what to try first, and when to see a spine specialist.',
-    date: '2025-05-28',
-    readTime: '4 min read',
-    category: 'Conditions',
-    image: '/images/Canal-Stenosis.webp',
-  },
-  {
-    slug: 'motion-preserving-vs-fusion',
-    title: 'Disc replacement or fusion? How we decide together',
-    excerpt:
-      'Both procedures relieve pain, but they change how your spine moves in different ways. A guide to the questions we walk through before choosing.',
-    date: '2025-05-02',
-    readTime: '6 min read',
-    category: 'Decisions',
-    image: '/images/C1A4022-scaled-e1747319220831.jpg',
-  },
-];
-
-/** Every article, newest first. `href` is the page address (the six older articles keep their original root addresses). */
-export const posts = [
-  ...legacyPosts.map((p) => ({ slug: p.slug, title: p.title, excerpt: p.excerpt, date: p.date, readTime: p.readTime, category: p.category, image: p.image, href: `/${p.slug}/` })),
-  ...blogPosts.map((p) => ({ ...p, href: `/blog/${p.slug}/` })),
-].sort((a, b) => b.date.localeCompare(a.date));
+/** Every article, newest first. Comes from WordPress (see wpPosts.ts). */
+export const posts = blogPosts;
 
 /** Header navigation. `mega` names the mega menu an item opens. */
 export const nav: { label: string; href: string; mega?: 'services' | 'conditions' }[] = [

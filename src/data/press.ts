@@ -102,7 +102,7 @@ export const press: PressFeature[] = [
     body: [
       'In June 2024 Becker\'s Spine Review published Newsweek\'s annual list of the 150 best spine surgeons in the United States. Dr. Amandeep Bhalla, listed with MemorialCare Long Beach Medical Center, is one of the surgeons named.',
       'Newsweek builds the list from three sources: Medicare data on each surgeon\'s practice, peer ratings of the quality of care they deliver, and whether the surgeon holds certification from the American Board of Orthopaedic Surgery. The 2024 list covers the 20 states with the most practicing physicians, and the surgeons are listed without a numbered order.',
-      'Dr. Bhalla is board certified by the American Board of Orthopaedic Surgery and fellowship trained in spine surgery at Harvard. He serves as Medical Director of the Spine Center and Vice Chair of Orthopaedic Surgery at MemorialCare Long Beach Medical Center, and sees patients at Commons Clinic in Long Beach.',
+      'Dr. Bhalla is board certified by the American Board of Orthopaedic Surgery and fellowship trained in spine surgery at Harvard. He serves as Medical Director of the Spine Center and Vice Chair of Orthopaedic Surgery at MemorialCare Long Beach Medical Center, and sees patients in Long Beach.',
       'The recognition reflects the approach behind every plan in this practice: a clear diagnosis first, the least invasive treatment that will work, and surgery only when it is the right answer. The full list is available on the Becker\'s Spine Review website.',
     ],
     highlights: [

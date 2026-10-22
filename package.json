@@ -5,10 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/sync-wordpress.mjs && node scripts/make-redirects.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "astro check"
+    "check": "astro check",
+    "sync:wp": "node scripts/sync-wordpress.mjs",
+    "redirects": "node scripts/make-redirects.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^6.0.6",
@@ -24,6 +26,7 @@
     "@astrojs/check": "^0.9.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "sanitize-html": "^2.18.1",
     "typescript": "^5.9.3"
   }
 }

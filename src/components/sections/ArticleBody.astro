@@ -11,15 +11,16 @@ interface Props {
   excerpt: string;
   category: string;
   image: string;
+  imageAlt?: string;
   date: string;
   readTime: string;
   body?: string;
 }
-const { title, excerpt, category, image, date, readTime, body } = Astro.props;
+const { title, excerpt, category, image, imageAlt, date, readTime, body } = Astro.props;
 const when = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 ---
 
-<PageLayout title={title} eyebrow={category} lede={excerpt} description={excerpt} image={image} imageAlt={title}>
+<PageLayout title={title} eyebrow={category} lede={excerpt} description={excerpt} image={image} imageAlt={imageAlt || title}>
   <section class="section-y">
     <Container class="max-w-3xl">
       <p class="text-sm text-mist"><time datetime={date}>{when}</time> · {readTime}</p>
@@ -74,6 +75,57 @@ const when = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'n
     width: 1rem;
     height: 1px;
     background: var(--color-gold);
+  }
+  .article ol {
+    padding-left: 1.5rem;
+    list-style: decimal;
+  }
+  .article ol li {
+    padding-left: 0.4rem;
+  }
+  .article ol li::before {
+    display: none;
+  }
+  .article a {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-gold);
+    text-underline-offset: 3px;
+  }
+  .article a:hover {
+    text-decoration-color: var(--color-ink);
+  }
+  .article img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+  }
+  .article figure {
+    margin-block: 2rem;
+  }
+  .article figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--color-mist);
+  }
+  .article blockquote {
+    border-left: 2px solid var(--color-ink);
+    padding-left: 1.25rem;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: var(--color-ink);
+  }
+  .article table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .article th,
+  .article td {
+    border: 1px solid var(--color-line);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
   }
   .article strong {
     color: var(--color-ink);
