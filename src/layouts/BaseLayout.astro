@@ -16,9 +16,14 @@ interface Props {
   lightHero?: boolean;
   /** Keep this page out of search results (used by the 404 page). */
   noindex?: boolean;
+  /** Social share image (path or full URL). Falls back to the main photo. */
+  image?: string;
+  type?: 'website' | 'article';
+  /** ISO date, for articles. */
+  published?: string;
 }
 
-const { title, description = site.description, transparentHeader = false, lightHero = false, noindex = false } = Astro.props;
+const { title, description = site.description, transparentHeader = false, lightHero = false, noindex = false, image, type = 'website', published } = Astro.props;
 const headerMode = lightHero ? 'light' : transparentHeader ? 'transparent' : 'solid';
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const origin = 'https://bhallaspine.com';
@@ -71,7 +76,41 @@ const schema = {
     },
   ],
 };
-const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | Orthopedic Spine Surgeon, Long Beach`;
+/* Keep the title under about 60 characters: drop the brand suffix when the page title is already long. */
+const withBrand = title ? `${title} | ${site.name}` : '';
+const pageTitle = !title ? `${site.name} | Orthopedic Spine Surgeon, Long Beach` : withBrand.length <= 62 ? withBrand : title;
+const ogImage = new URL(image || '/images/bhalla-main.jpg', origin).href;
+
+/* Breadcrumbs from the address: Home > section > page. */
+const sections: Record<string, string> = { services: 'Services', conditions: 'Conditions', press: 'In the news', blog: 'Blog' };
+const parts = Astro.url.pathname.split('/').filter(Boolean);
+const crumbs: { name: string; url: string }[] = [{ name: 'Home', url: `${origin}/` }];
+if (!noindex && Astro.url.pathname !== '/') {
+  if (type === 'article' && parts[0] !== 'blog') crumbs.push({ name: 'Blog', url: `${origin}/blog/` });
+  else if (parts.length > 1 && sections[parts[0]]) crumbs.push({ name: sections[parts[0]], url: `${origin}/${parts[0]}/` });
+  crumbs.push({ name: title ?? parts[parts.length - 1], url: canonical });
+}
+const extra: Record<string, unknown>[] = [];
+if (crumbs.length > 1) {
+  extra.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
+  });
+}
+if (type === 'article' && title) {
+  extra.push({
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    image: ogImage,
+    datePublished: published,
+    dateModified: published,
+    mainEntityOfPage: canonical,
+    author: { '@id': `${origin}/#physician` },
+    publisher: { '@id': `${origin}/#clinic` },
+  });
+}
+(schema['@graph'] as unknown[]).push(...extra);
 ---
 
 <!doctype html>
@@ -86,8 +125,16 @@ const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | Orthopedic
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImage} />
+    {published && <meta property="article:published_time" content={published} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />

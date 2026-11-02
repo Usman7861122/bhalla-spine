@@ -20,7 +20,7 @@ const { title, excerpt, category, image, imageAlt, date, readTime, body } = Astr
 const when = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 ---
 
-<PageLayout title={title} eyebrow={category} lede={excerpt} description={excerpt} image={image} imageAlt={imageAlt || title}>
+<PageLayout title={title} eyebrow={category} lede={excerpt} description={excerpt} image={image} imageAlt={imageAlt || title} type="article" published={date}>
   <section class="section-y">
     <Container class="max-w-3xl">
       <p class="text-sm text-mist"><time datetime={date}>{when}</time> · {readTime}</p>

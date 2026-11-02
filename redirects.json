@@ -84,6 +84,18 @@
     {
       "from": "/conditions/cervical-fusion",
       "to": "/services/cervical-fusion/"
+    },
+    {
+      "from": "/blog/microdiscectomy-herniated-disc-bixby-knolls",
+      "to": "/conditions/lumbar-herniated-disc/"
+    },
+    {
+      "from": "/blog/sciatica-treatment-long-beach",
+      "to": "/conditions/lumbar-radiculopathy/"
+    },
+    {
+      "from": "/blog/motion-preserving-vs-fusion",
+      "to": "/services/motion-preservation-surgery/"
     }
   ]
 }

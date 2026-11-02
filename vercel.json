@@ -211,6 +211,36 @@
       "source": "/conditions/cervical-fusion",
       "destination": "/services/cervical-fusion/",
       "statusCode": 301
+    },
+    {
+      "source": "/blog/microdiscectomy-herniated-disc-bixby-knolls/",
+      "destination": "/conditions/lumbar-herniated-disc/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/microdiscectomy-herniated-disc-bixby-knolls",
+      "destination": "/conditions/lumbar-herniated-disc/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/sciatica-treatment-long-beach/",
+      "destination": "/conditions/lumbar-radiculopathy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/sciatica-treatment-long-beach",
+      "destination": "/conditions/lumbar-radiculopathy/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/motion-preserving-vs-fusion/",
+      "destination": "/services/motion-preservation-surgery/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/motion-preserving-vs-fusion",
+      "destination": "/services/motion-preservation-surgery/",
+      "statusCode": 301
     }
   ],
   "headers": [

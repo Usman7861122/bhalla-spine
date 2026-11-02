@@ -14,12 +14,26 @@ interface Props {
   imageAlt?: string;
   position?: string;
   noindex?: boolean;
+  /** Set to "article" for blog posts. */
+  type?: 'website' | 'article';
+  /** ISO date, for articles. */
+  published?: string;
 }
 
-const { title, eyebrow, lede, description, image, imageAlt, position, noindex } = Astro.props;
+const { title, eyebrow, lede, description: descriptionProp, image, imageAlt, position, noindex, type, published } = Astro.props;
+/* Every page gets its own meta description: use the intro text when none is given. */
+const clean = (t?: string) => (t ?? '').replace(/\s+/g, ' ').trim();
+/* Search results show about 155 characters, so cut longer text at a word boundary. */
+const shorten = (t: string, max = 155) => {
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max);
+  return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:.\s]+$/, '') + '…';
+};
+const rawDescription = clean(descriptionProp) || clean(lede);
+const description = rawDescription ? shorten(rawDescription) : undefined;
 ---
 
-<BaseLayout title={title} description={description} transparentHeader noindex={noindex}>
+<BaseLayout title={title} description={description} image={image} type={type} published={published} transparentHeader noindex={noindex}>
   <PageHero title={title} eyebrow={eyebrow} lede={lede} image={image} imageAlt={imageAlt} position={position}>
     <slot name="hero" />
   </PageHero>
