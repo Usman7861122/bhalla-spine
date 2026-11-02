@@ -79,7 +79,10 @@ export default function Header({ mode: initialMode = 'solid' }: Props) {
       ref={headerRef}
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300',
-        onDark
+        /* No backdrop blur while the mobile menu is open: it would trap the fixed menu inside the 80px header. */
+        mobileOpen
+          ? 'bg-porcelain border-b border-line'
+          : onDark
           ? 'bg-transparent'
           : onLight
             ? 'bg-porcelain/60 backdrop-blur-md'
